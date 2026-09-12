@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Política de Segurança e Privacidade — Gogh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{max-width:800px;margin:40px auto;padding:0 24px;
+       font:15px/1.65 Georgia,"Times New Roman",serif;color:#1a1a1a}
+  h1{font-size:26px;margin:36px 0 14px;border-bottom:2px solid #1a1a1a;padding-bottom:8px}
+  h2{font-size:19px;margin:30px 0 10px}
+  h3{font-size:16px;margin:22px 0 8px}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0;padding-left:26px}
+  li{margin:5px 0}
+  table{border-collapse:collapse;width:100%;margin:16px 0;font-size:14px}
+  th,td{border:1px solid #999;padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f0f0f0}
+  blockquote{margin:16px 0;padding:10px 18px;border-left:3px solid #999;
+             background:#f7f7f7;font-size:14px}
+  blockquote p{margin:6px 0}
+  code{font-family:Consolas,monospace;font-size:13px;background:#f0f0f0;padding:1px 4px}
+  hr{border:0;border-top:1px solid #ccc;margin:30px 0}
+  @media print{body{margin:0;max-width:none}h1{page-break-before:auto}}
+</style></head><body>
+<div style="background:#0B1547;padding:16px 24px;margin:-40px -24px 32px"><a href="./" style="color:#fff;text-decoration:none;font:600 15px system-ui,sans-serif;letter-spacing:.12em">&larr; GOGH</a></div>
+<h1>Política de Segurança da Informação e Privacidade — Gogh</h1>
+<blockquote>
+<p>Documento único, em quatro partes: <strong>1. Segurança da Informação</strong>, <strong>2. Classificação de Dados</strong>, <strong>3. Resposta a Incidentes</strong> e <strong>4. Privacidade e Proteção de Dados</strong>.</p>
+<p>Vale para todas as pessoas da Gogh e para todo sistema que a Gogh opera em nome de vendedores de marketplace.</p>
+<p><strong>Revisão obrigatória a cada 6 meses</strong>, e sempre que houver incidente ou mudança relevante de sistema. Próxima revisão: <strong>março de 2027</strong>.</p>
+</blockquote>
+<h2>Quem somos e o que tocamos</h2>
+<p>A Gogh é uma agência de consultoria de marketplace. Gerimos contas de vendedores em Shopee, Mercado Livre e TikTok Shop — operação, anúncios e automação.</p>
+<p>Para isso operamos o <strong>gogh-connect</strong>, sistema próprio que se conecta às APIs oficiais desses marketplaces mediante <strong>autorização explícita do vendedor</strong>.</p>
+<p><strong>O que o sistema acessa:</strong> informações da loja e do catálogo de produtos das lojas que o vendedor autorizou.</p>
+<p><strong>O que o sistema NÃO acessa:</strong> dados financeiros, dados bancários, dados pessoais de compradores, senhas de vendedor.</p>
+<p><strong>A Gogh nunca solicita, recebe ou armazena a senha da conta de marketplace do vendedor.</strong> O acesso é sempre por autorização OAuth concedida pelo próprio vendedor, revogável por ele a qualquer momento, sem intermediação da Gogh.</p>
+<hr>
+<h1>1. Segurança da Informação</h1>
+<h2>1.1 Princípios</h2>
+<ol>
+<li><strong>Menor privilégio.</strong> Solicitamos apenas as permissões necessárias ao serviço contratado. Ampliar permissão exige nova autorização do vendedor.</li>
+<li><strong>Isolamento entre clientes.</strong> Dado de um vendedor nunca é acessível a partir do contexto de outro.</li>
+<li><strong>Segredo não circula.</strong> Chave, token e segredo de aplicação não passam por chat, e-mail, mensagem, captura de tela, chamado ou repositório de código.</li>
+<li><strong>Registro do que foi feito.</strong> Toda operação em conta de cliente é registrada.</li>
+</ol>
+<h2>1.2 Controle de acesso</h2>
+<ul>
+<li>O acesso aos tokens é exclusivo do processo servidor. <strong>Nenhuma pessoa da Gogh visualiza tokens de vendedor</strong>, nem em tela, nem em log.</li>
+<li>As estações de trabalho que operam o sistema têm permissão de arquivo restrita a contas nominais; contas de terceiros na mesma máquina não têm leitura sobre o diretório de trabalho.</li>
+<li>Repositórios de código da agência são privados.</li>
+</ul>
+<h2>1.3 Linha de base das estações de trabalho</h2>
+<p>Obrigatório em toda máquina que acessa sistema ou conta de cliente:</p>
+<ul>
+<li><strong>Autenticação multifator</strong> em todas as contas que a ofereçam — marketplace, e-mail, repositório de código, provedor de nuvem</li>
+<li><strong>Bloqueio de tela automático</strong> por inatividade, com senha para destravar</li>
+<li><strong>Senha forte e única por serviço</strong>, sem reuso entre contas</li>
+<li><strong>Disco criptografado</strong> e sistema operacional com atualizações em dia</li>
+<li><strong>Mesa limpa e tela limpa</strong>: nada de credencial em papel, quadro, bloco de notas ou captura de tela</li>
+<li><strong>Nenhuma conta compartilhada</strong> para acesso a sistema de cliente</li>
+<li><strong>Antivírus ativo e atualizado</strong> em toda estação, com proteção em tempo real e atualização automática de assinaturas</li>
+</ul>
+<h2>1.3.1 Onde os dados ficam</h2>
+<p><strong>Todos os dados são armazenados e processados no Brasil</strong>, na infraestrutura operada pela Gogh. Não há transferência internacional de dados de vendedor, e não há processamento por subcontratado em outro país.</p>
+<h2>1.4 Gestão de vulnerabilidades</h2>
+<ul>
+<li><strong>Zero dependências de terceiros</strong> na aplicação, por decisão de projeto: não há cadeia de suprimento de software para monitorar, e não há pacote de terceiro executando junto do código que toca token de cliente.</li>
+<li>Atualização do runtime e do sistema operacional acompanhada continuamente; correção de segurança é aplicada assim que publicada.</li>
+<li><strong>Suíte de testes automatizados</strong> roda a cada alteração, cobrindo isolamento entre clientes, validação de <code>state</code> e assinatura de requisição. Alteração que quebre qualquer uma dessas garantias não entra.</li>
+<li>Falha ou vulnerabilidade encontrada é registrada com <strong>o que era, como foi descoberta e o que mudou por causa dela</strong> — registro sem a terceira parte não conta como registro.</li>
+<li>Canal aberto para relato externo de vulnerabilidade: <code>goghconsultoria@gmail.com</code>.</li>
+</ul>
+<h2>1.5 Criptografia</h2>
+<table><thead><tr><th>Estado do dado</th><th>Proteção</th></tr></thead><tbody>
+<tr><td>Em trânsito</td><td><strong>TLS/HTTPS obrigatório</strong> em toda comunicação, interna e externa</td></tr>
+<tr><td>Em repouso</td><td><strong>AES-256-GCM</strong> com chave de 256 bits</td></tr>
+</tbody></table>
+<p>A criptografia em repouso usa o <strong>identificador do cliente como dado autenticado adicional (AAD)</strong>. O efeito prático: um registro copiado do contexto de um cliente para o de outro <strong>falha na decifragem</strong>. O isolamento não depende de alguém escrever a consulta certa — é garantido pela criptografia.</p>
+<p>A chave mestra é mantida <strong>fora do banco de dados</strong>, em variável de ambiente protegida, nunca versionada em repositório.</p>
+<p>Há suíte de testes automatizados que verifica o isolamento entre clientes a cada alteração do sistema.</p>
+<h2>1.6 Proteção da aplicação</h2>
+<ul>
+<li><strong>Anti-CSRF:</strong> todo fluxo de autorização usa parâmetro <code>state</code> de uso único e prazo curto, validado no retorno. Nenhum marketplace é presumido como responsável por essa validação.</li>
+<li><strong>Código de autorização de uso único</strong>, trocado imediatamente por token.</li>
+<li><strong>Rotação de token transacional:</strong> a troca do par de tokens é atômica — grava inteira ou não grava.</li>
+<li><strong>Log sem segredo:</strong> a <em>query string</em> nunca é registrada, porque é por ela que transitam códigos de autorização. Mensagens de erro nunca reproduzem o corpo da requisição, que contém o segredo da aplicação.</li>
+</ul>
+<h2>1.7 Rede</h2>
+<p>A aplicação roda em servidor dedicado ao serviço, exposto à internet <strong>apenas pelas rotas necessárias ao fluxo de autorização e à operação</strong>, sempre sobre HTTPS. O banco de dados não é exposto à rede pública.</p>
+<p><strong>A Gogh não opera hoje segregação de rede corporativa nem monitoramento contínuo de ameaças de rede.</strong> A mitigação é reduzir a superfície: aplicação pequena, sem dependências de terceiros, sem porta aberta além da necessária, e segredos cifrados de modo que o acesso ao arquivo do banco não revele token.</p>
+<p><em>Esta é uma limitação conhecida e declarada, não uma omissão. Está no plano de evolução conforme a operação crescer.</em></p>
+<h2>1.8 Desenvolvimento</h2>
+<ul>
+<li>Zero dependências de pacotes de terceiros na aplicação, por decisão de projeto: menos código de terceiro é menos superfície de ataque e menos cadeia de suprimento para auditar.</li>
+<li>Testes automatizados cobrindo isolamento entre clientes, validação de <code>state</code> e assinatura de requisição.</li>
+<li>Toda alteração é versionada, com registro de motivo.</li>
+</ul>
+<hr>
+<h1>2. Classificação de Dados</h1>
+<p>Quatro níveis. A classificação define o tratamento, e o tratamento não é opcional.</p>
+<table><thead><tr><th>Nível</th><th>O que é</th><th>Tratamento</th></tr></thead><tbody>
+<tr><td><strong>Crítico</strong></td><td>Token de acesso e de atualização, segredo de aplicação, chave de criptografia</td><td>Cifrado em repouso, isolado por cliente. Nunca em log, tela, chat, print ou repositório. Acesso só pelo processo servidor</td></tr>
+<tr><td><strong>Confidencial</strong></td><td>Dados de negócio do vendedor: catálogo, preço, margem, faturamento, contrato</td><td>Cifrado em trânsito. Não sai do ambiente da Gogh sem necessidade real e ciência do responsável pela conta</td></tr>
+<tr><td><strong>Interno</strong></td><td>Procedimentos, registros de auditoria, documentação</td><td>Restrito a pessoas da Gogh</td></tr>
+<tr><td><strong>Público</strong></td><td>Material institucional</td><td>Sem restrição</td></tr>
+</tbody></table>
+<p><strong>Regra de trânsito:</strong> dado Crítico e Confidencial não é enviado a serviço externo, ferramenta de terceiro ou canal de mensagem. Na dúvida sobre o nível, trata-se como o mais restritivo.</p>
+<hr>
+<h1>3. Resposta a Incidentes</h1>
+<h2>3.1 O que conta como incidente</h2>
+<p>Acesso não autorizado a dados de vendedor; exposição de token, segredo ou chave; alteração indevida em conta de cliente; indisponibilidade que impeça a operação contratada; qualquer suspeita fundamentada dos anteriores.</p>
+<p><strong>Suspeita é tratada como incidente até prova em contrário.</strong></p>
+<h2>3.2 Papéis</h2>
+<table><thead><tr><th>Papel</th><th>Quem</th><th>Responsabilidade</th></tr></thead><tbody>
+<tr><td><strong>Responsável por Segurança da Informação</strong></td><td><strong>Heitor</strong> (sócio)</td><td>Conduz a resposta, decide contenção, coordena a correção</td></tr>
+<tr><td><strong>Responsável por Proteção de Dados (DPO)</strong></td><td><strong>Theo</strong> (sócio)</td><td>Comunicação com titulares, vendedores e autoridades</td></tr>
+<tr><td>Apoio</td><td>Equipe de operação</td><td>Levantamento de impacto por conta</td></tr>
+</tbody></table>
+<h2>3.3 Como agir</h2>
+<ol>
+<li><strong>Conter</strong> — revogar tokens afetados, suspender a integração envolvida</li>
+<li><strong>Avaliar</strong> — quais vendedores, quais dados, qual janela de tempo</li>
+<li><strong>Notificar</strong> — vendedores afetados e o marketplace envolvido, <strong>em até 72 horas</strong> da confirmação, com o que se sabe, o que foi feito e o que falta</li>
+<li><strong>Corrigir</strong> — eliminar a causa, não o sintoma</li>
+<li><strong>Registrar</strong> — o que houve, como foi descoberto, o que mudou por causa disso</li>
+</ol>
+<h2>3.4 Canais</h2>
+<table><thead><tr><th>Para quê</th><th>Onde</th></tr></thead><tbody>
+<tr><td>Relatar incidente ou vulnerabilidade</td><td><strong>goghconsultoria@gmail.com</strong></td></tr>
+<tr><td>Assuntos de privacidade e dados pessoais</td><td><strong>goghconsultoria@gmail.com</strong></td></tr>
+</tbody></table>
+<p>Qualquer pessoa — de dentro ou de fora da Gogh — pode relatar por esses canais. Relato de boa-fé nunca é motivo de retaliação.</p>
+<p><em>Os endereços acima devem estar ativos antes da publicação desta política.</em></p>
+<hr>
+<h1>4. Privacidade e Proteção de Dados</h1>
+<h2>4.1 Base e finalidade</h2>
+<p>A Gogh trata dados de vendedores <strong>exclusivamente para executar o serviço contratado</strong> de gestão de contas de marketplace. Não há uso secundário: os dados não alimentam produto próprio, não são agregados para venda, não treinam modelo, não geram base de prospecção.</p>
+<h2>4.2 Compartilhamento</h2>
+<p><strong>A Gogh não compartilha, vende, aluga nem cede dados de vendedor a terceiros.</strong></p>
+<p>As únicas transmissões que ocorrem são para as <strong>APIs oficiais do próprio marketplace</strong> ao qual o dado pertence, para executar o que o vendedor autorizou.</p>
+<h2>4.3 Direitos do titular e pedidos do vendedor</h2>
+<p>A Gogh <strong>atende pedidos de exclusão, atualização e fornecimento de dados</strong> feitos pelo vendedor ou encaminhados pelo marketplace, em até <strong>15 dias corridos</strong>, pelo canal <code>goghconsultoria@gmail.com</code>.</p>
+<h2>4.4 Revogação</h2>
+<p>O vendedor pode revogar a autorização <strong>a qualquer momento, sozinho, pelo painel do próprio marketplace</strong>, sem precisar avisar ou pedir à Gogh.</p>
+<p>Ao receber a notificação de desautorização, o sistema <strong>apaga os tokens daquela loja</strong>.</p>
+<h2>4.5 Retenção e descarte</h2>
+<table><thead><tr><th>Dado</th><th>Até quando</th></tr></thead><tbody>
+<tr><td>Tokens de acesso</td><td>Enquanto durar a autorização. Revogou, apaga</td></tr>
+<tr><td>Dados de catálogo e operação</td><td>Enquanto durar o contrato</td></tr>
+<tr><td>Registros de auditoria</td><td>12 meses, para apurar incidente</td></tr>
+</tbody></table>
+<p><strong>Ao fim da relação contratual, todos os dados do cliente em posse da Gogh são excluídos</strong>, mediante confirmação ao cliente. Excetua-se apenas o que houver obrigação legal de guardar.</p>
+<h2>4.6 Conformidade</h2>
+<p>O tratamento segue a <strong>Lei Geral de Proteção de Dados (Lei 13.709/2018)</strong> e os termos de desenvolvedor e de parceiro das plataformas em que a Gogh opera.</p>
+<p>A Gogh <strong>não possui</strong> certificação ISO 27001, SOC 2 ou ePrivacy. Declarado abertamente: somos uma operação recente e não vamos afirmar certificação que não temos.</p>
+<hr>
+<h2>Histórico</h2>
+<table><thead><tr><th>Versão</th><th>Data</th><th>O que mudou</th></tr></thead><tbody>
+<tr><td>1.0</td><td>11/09/2026</td><td>Primeira versão, escrita a partir do que o sistema já faz</td></tr>
+</tbody></table>
+</body></html>

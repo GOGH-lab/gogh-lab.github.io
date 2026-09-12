@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gogh — Gestão de contas em marketplace</title>
+<meta name="description" content="A Gogh gere contas de vendedores em Shopee, Mercado Livre e TikTok Shop: catálogo, operação, conteúdo em vídeo e mídia paga.">
+<meta property="og:title" content="Gogh — Gestão de contas em marketplace">
+<meta property="og:description" content="Catálogo, operação, vídeo e mídia paga para vendedores em Shopee, Mercado Livre e TikTok Shop.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1547'/%3E%3Cpath d='M44 22a15 15 0 1 0 2 15H33' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='17' r='4.5' fill='%23F2B705'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noite:#0B1547;
+    --noite-2:#13236B;
+    --cobalto:#2B45E0;
+    --girassol:#F2B705;
+    --trigo:#FFE9A8;
+    --papel:#F6F5F0;
+    --tinta:#10131A;
+    --tinta-2:#4E5563;
+    --linha:#E1DFD6;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--noite);scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--papel);color:var(--tinta);
+    font:400 17px/1.6 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ---------- topo e hero ---------- */
+  .hero{position:relative;background:var(--noite);color:#fff;overflow:hidden}
+  #ceu{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(11,21,71,.92) 0%,rgba(11,21,71,.55) 55%,rgba(11,21,71,.15) 100%);
+  }
+  .hero .wrap{position:relative;z-index:1}
+  header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+  .marca svg{width:40px;height:40px;flex:none}
+  .marca b{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;
+    font-size:23px;letter-spacing:.16em;
+  }
+  nav{display:flex;gap:26px;font-size:15px;font-weight:500}
+  nav a{text-decoration:none;color:rgba(255,255,255,.78)}
+  nav a:hover,nav a:focus-visible{color:var(--girassol);outline:none}
+  @media(max-width:560px){nav{display:none}}
+
+  .hero-corpo{padding:84px 0 104px;max-width:680px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;
+    font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--trigo);
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--girassol);box-shadow:0 0 12px var(--girassol)}
+  h1{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;
+    font-size:clamp(42px,7.2vw,84px);line-height:.96;letter-spacing:-.035em;
+    margin:0 0 26px;text-wrap:balance;
+  }
+  h1 em{font-style:normal;color:var(--girassol)}
+  .sub{font-size:20px;line-height:1.55;color:rgba(255,255,255,.82);max-width:54ch;margin:0 0 36px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;
+    font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s ease,background .15s ease;
+  }
+  .btn svg{width:18px;height:18px}
+  .btn.primario{background:var(--girassol);color:var(--noite)}
+  .btn.primario:hover,.btn.primario:focus-visible{background:#FFC72C;transform:translateY(-2px);outline:none}
+  .btn.fantasma{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+  .btn.fantasma:hover,.btn.fantasma:focus-visible{border-color:#fff;transform:translateY(-2px);outline:none}
+
+  /* ---------- canais ---------- */
+  .faixa{background:var(--noite-2);color:#fff}
+  .faixa .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;padding-top:22px;padding-bottom:22px}
+  .faixa small{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .canal{display:inline-flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:21px}
+  .canal i{width:12px;height:12px;border-radius:50%;display:block}
+
+  /* ---------- secoes ---------- */
+  section{padding:88px 0}
+  .rotulo{
+    font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--cobalto);margin:0 0 12px;
+  }
+  h2{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;
+    font-size:clamp(32px,4.4vw,48px);letter-spacing:-.025em;line-height:1.02;
+    margin:0 0 44px;max-width:20ch;text-wrap:balance;
+  }
+
+  .servicos{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:720px){.servicos{grid-template-columns:repeat(2,1fr)}}
+  .card{
+    background:#fff;border:1px solid var(--linha);border-radius:18px;padding:30px;
+    display:grid;gap:14px;align-content:start;
+  }
+  .icone{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:var(--noite);color:var(--girassol);
+  }
+  .icone svg{width:26px;height:26px}
+  .card h3{margin:0;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:23px;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--tinta-2)}
+
+  .principios-bg{background:#fff;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+  .principios{display:grid;gap:34px;grid-template-columns:1fr}
+  @media(min-width:760px){.principios{grid-template-columns:repeat(3,1fr);gap:48px}}
+  .principio{border-top:3px solid var(--girassol);padding-top:22px}
+  .principio h3{margin:0 0 8px;font-size:19px;font-weight:600}
+  .principio p{margin:0;color:var(--tinta-2);font-size:16px}
+  .principio a{color:var(--cobalto);font-weight:600}
+
+  /* ---------- contato ---------- */
+  .contato{background:var(--girassol);color:var(--noite);padding:92px 0}
+  .contato .rotulo{color:var(--noite);opacity:.7}
+  .contato h2{margin-bottom:30px}
+  .contato-grade{display:grid;gap:14px;grid-template-columns:1fr;max-width:720px}
+  @media(min-width:640px){.contato-grade{grid-template-columns:1fr 1fr}}
+  .contato a.bloco{
+    display:flex;align-items:center;gap:16px;padding:22px 24px;border-radius:16px;
+    background:var(--noite);color:#fff;text-decoration:none;transition:transform .15s ease;
+  }
+  .contato a.bloco:hover,.contato a.bloco:focus-visible{transform:translateY(-3px);outline:none}
+  .contato a.bloco svg{width:28px;height:28px;flex:none;color:var(--girassol)}
+  .contato a.bloco span{display:grid;line-height:1.3;min-width:0}
+  .contato a.bloco small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+  .contato a.bloco strong{font-size:18px;font-weight:600;overflow-wrap:anywhere}
+
+  footer{background:var(--noite);color:rgba(255,255,255,.65);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding-top:28px;padding-bottom:28px}
+  footer a{color:rgba(255,255,255,.85)}
+
+  @media (prefers-reduced-motion: reduce){ .btn,.contato a.bloco{transition:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <canvas id="ceu" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header>
+      <a class="marca" href="./" aria-label="Gogh, página inicial">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#13236B"/>
+          <path d="M44 22a15 15 0 1 0 2 15H33" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="47" cy="17" r="4.5" fill="#F2B705"/>
+        </svg>
+        <b>GOGH</b>
+      </a>
+      <nav aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#como">Como trabalhamos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <div class="hero-corpo">
+      <p class="eyebrow">Consultoria de marketplace</p>
+      <h1>Sua loja vendendo mais, com <em>método</em>.</h1>
+      <p class="sub">A Gogh gere contas de vendedores na Shopee, no Mercado Livre e no TikTok Shop — do catálogo à mídia paga, com cada decisão apoiada em dado.</p>
+      <div class="cta">
+        <a class="btn primario" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          Fale com a gente
+        </a>
+        <a class="btn fantasma" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="faixa">
+  <div class="wrap">
+    <small>Onde atuamos</small>
+    <span class="canal"><i style="background:#EE4D2D"></i>Shopee</span>
+    <span class="canal"><i style="background:#FFE600"></i>Mercado Livre</span>
+    <span class="canal"><i style="background:#25F4EE;box-shadow:3px 0 0 #FE2C55"></i>TikTok Shop</span>
+  </div>
+</div>
+
+<section id="servicos">
+  <div class="wrap">
+    <p class="rotulo">Serviços</p>
+    <h2>Tudo que a sua conta precisa para crescer.</h2>
+    <div class="servicos">
+      <article class="card">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>Gestão de catálogo</h3>
+        <p>Anúncios cadastrados e corrigidos em volume: título, categoria, marca, fotos e atributos que colocam o produto na busca.</p>
+      </article>
+      <article class="card">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+        <h3>Operação da conta</h3>
+        <p>Estoque, preço, reputação e atendimento acompanhados de perto, para a loja crescer sem perder saúde.</p>
+      </article>
+      <article class="card">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></div>
+        <h3>Conteúdo em vídeo</h3>
+        <p>Vídeos de produto para as páginas de anúncio e para o TikTok Shop, feitos para mostrar o que o comprador quer ver antes de comprar.</p>
+      </article>
+      <article class="card">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+        <h3>Mídia paga</h3>
+        <p>Campanhas nos marketplaces e nas redes, com meta de retorno definida antes do primeiro real investido.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="principios-bg" id="como">
+  <div class="wrap">
+    <p class="rotulo">Como trabalhamos</p>
+    <h2>Três regras que não negociamos.</h2>
+    <div class="principios">
+      <div class="principio">
+        <h3>Nada muda sem o seu aval</h3>
+        <p>Analisar e recomendar é o nosso trabalho. Alterar qualquer coisa na sua loja só acontece com a sua aprovação.</p>
+      </div>
+      <div class="principio">
+        <h3>Toda recomendação tem número</h3>
+        <p>Cada sugestão chega com o dado que a sustenta. Palpite não entra na sua conta.</p>
+      </div>
+      <div class="principio">
+        <h3>Seus dados protegidos</h3>
+        <p>Acesso só pela autorização oficial das plataformas — nunca por senha — e revogável quando você quiser. <a href="privacidade.html">Nossa política</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <p class="rotulo">Contato</p>
+    <h2>Vamos conversar sobre a sua loja.</h2>
+    <div class="contato-grade">
+      <a class="bloco" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span><small>Instagram</small><strong>@agency.gogh</strong></span>
+      </a>
+      <a class="bloco" href="mailto:goghconsultoria@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <span><small>E-mail</small><strong>goghconsultoria@gmail.com</strong></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Gogh · Consultoria de marketplace</span>
+    <a href="privacidade.html">Política de Segurança e Privacidade</a>
+  </div>
+</footer>
+
+<script>
+/* Ceu em pinceladas: particulas seguindo um campo de redemoinhos, homenagem
+   discreta ao nome. Desenha um quadro estatico se o usuario pede menos movimento. */
+(function(){
+  var cv = document.getElementById('ceu'); if(!cv || !cv.getContext) return;
+  var cx = cv.getContext('2d'), W, H, dpr, pts = [];
+  var calmo = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cores = ['rgba(242,183,5,.55)','rgba(255,233,168,.35)','rgba(125,150,255,.35)','rgba(255,255,255,.22)'];
+  function campo(x,y,t){
+    return Math.sin(x*0.0042 + t*0.00012) * 1.9 + Math.cos(y*0.0051 - t*0.0001) * 1.6
+         + Math.sin((x+y)*0.0023) * 1.2;
+  }
+  function tam(){
+    dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr; cx.setTransform(dpr,0,0,dpr,0,0);
+    cx.fillStyle = '#0B1547'; cx.fillRect(0,0,W,H);
+    pts = [];
+    var n = Math.round(W*H/2600);
+    for (var i=0;i<n;i++) pts.push({x:Math.random()*W, y:Math.random()*H, c:cores[i%cores.length], v:0.6+Math.random()*0.9});
+    estrelas();
+  }
+  function estrelas(){
+    for (var i=0;i<7;i++){
+      var x = W*(0.45+Math.random()*0.53), y = H*(0.08+Math.random()*0.8), r = 6+Math.random()*16;
+      var g = cx.createRadialGradient(x,y,0,x,y,r*3);
+      g.addColorStop(0,'rgba(255,214,90,.55)'); g.addColorStop(1,'rgba(255,214,90,0)');
+      cx.fillStyle = g; cx.beginPath(); cx.arc(x,y,r*3,0,Math.PI*2); cx.fill();
+    }
+  }
+  function passo(t){
+    cx.lineWidth = 1.3; cx.lineCap = 'round';
+    for (var i=0;i<pts.length;i++){
+      var p = pts[i], a = campo(p.x,p.y,t);
+      var nx = p.x + Math.cos(a)*p.v*1.6, ny = p.y + Math.sin(a)*p.v*1.6;
+      cx.strokeStyle = p.c; cx.beginPath(); cx.moveTo(p.x,p.y); cx.lineTo(nx,ny); cx.stroke();
+      p.x = nx; p.y = ny;
+      if (p.x<0||p.x>W||p.y<0||p.y>H){ p.x=Math.random()*W; p.y=Math.random()*H; }
+    }
+  }
+  function loop(t){
+    cx.fillStyle = 'rgba(11,21,71,.035)'; cx.fillRect(0,0,W,H);
+    passo(t); requestAnimationFrame(loop);
+  }
+  tam();
+  if (calmo){ for (var k=0;k<160;k++) passo(k*16); }
+  else {
+    for (var k=0;k<90;k++) passo(k*16);   /* ja abre com pinceladas visiveis */
+    requestAnimationFrame(loop);
+  }
+  var tmo; window.addEventListener('resize', function(){ clearTimeout(tmo); tmo = setTimeout(tam, 200); });
+})();
+</script>
+</body>
+</html>
