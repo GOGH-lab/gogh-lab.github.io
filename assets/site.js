@@ -2,7 +2,7 @@
 (function () {
   // Número comercial do WhatsApp, só dígitos com DDI e DDD (ex.: "5534999999999").
   // Vazio: os botões "Falar com especialista" abrem o Direct do Instagram.
-  var WHATSAPP = '';
+  var WHATSAPP = '5516991366741';
   var MENSAGEM = 'Olá! Vim pelo site da Gogh e quero falar com um especialista sobre a minha loja.';
 
   if (/^\d{12,13}$/.test(WHATSAPP)) {
