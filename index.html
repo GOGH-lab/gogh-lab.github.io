@@ -3,323 +3,276 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agency Gogh — Estratégia, gestão e resultados em marketplace</title>
-<meta name="description" content="A Agency Gogh gere contas de vendedores em Shopee, Mercado Livre e TikTok Shop: catálogo, operação, conteúdo em vídeo e mídia paga.">
+<title>Agency Gogh | Gestão de Shopee, Mercado Livre e TikTok Shop</title>
+<meta name="description" content="A Gogh cuida de contas na Shopee, no Mercado Livre e no TikTok Shop: catálogo, reputação, anúncios pagos e vídeo de produto.">
+<meta name="theme-color" content="#15110D">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Agency Gogh">
-<meta property="og:description" content="Estratégia · Gestão · Resultados em Shopee, Mercado Livre e TikTok Shop.">
-<meta name="theme-color" content="#0A0A0B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0B'/%3E%3Ctext x='8' y='48' font-family='Georgia,serif' font-size='46' fill='%23EFE8DC'%3EG%3C/text%3E%3Ctext x='26' y='56' font-family='Georgia,serif' font-size='34' fill='%23D4A95E'%3EG%3C/text%3E%3C/svg%3E">
+<meta property="og:description" content="Sua loja revisada, anúncio por anúncio. Gestão de Shopee, Mercado Livre e TikTok Shop.">
+<meta property="og:image" content="https://gogh-lab.github.io/gogh-avatar.png">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="gogh-avatar.png">
+<link rel="apple-touch-icon" href="gogh-avatar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --preto:#0A0A0B;
-    --carvao:#131315;
-    --carvao-2:#1A1A1D;
-    --creme:#EFE8DC;
-    --creme-2:#B9B2A6;
-    --ouro:#D4A95E;
-    --ouro-escuro:#A8793F;
-    --ouro-claro:#EBCB8B;
-    --linha:rgba(212,169,94,.22);
-    --ouro-grad:linear-gradient(135deg,#A8793F 0%,#EBCB8B 48%,#B8894A 100%);
+    --tinta:#15110D;
+    --carvao:#1F1914;
+    --creme:#EFE6D6;
+    --creme-2:#B3A895;
+    --ouro:#C9A063;
+    --ouro-claro:#E3C58C;
+    --fio:rgba(201,160,99,.28);
+    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
   }
   *{box-sizing:border-box}
-  html{background:var(--preto);scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--preto);color:var(--creme);
-    font:400 16px/1.75 "Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
+  html{background:var(--tinta);scroll-behavior:smooth}
+  body{margin:0;background:var(--tinta);color:var(--creme);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-  .serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+  :focus-visible{outline:2px solid var(--ouro-claro);outline-offset:4px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance}
+  p{margin:0}
 
-  /* ---------- topo ---------- */
-  header{position:relative;z-index:2}
-  header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px}
-  .marca-mini{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-  .marca-mini svg{width:42px;height:42px;flex:none}
-  .marca-mini span{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:500;letter-spacing:.32em}
-  nav{display:flex;gap:30px}
-  nav a{
-    text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--creme-2);transition:color .2s ease;
-  }
-  nav a:hover,nav a:focus-visible{color:var(--ouro-claro);outline:none}
-  @media(max-width:620px){nav{display:none}}
+  /* topo */
+  .topo{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:22px;padding-bottom:22px}
+  .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+  .marca img{width:40px;height:40px;border-radius:8px;display:block}
+  .marca span{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:.02em}
+  .topo nav{display:flex;gap:28px;font-size:14px}
+  .topo nav a{text-decoration:none;color:var(--creme-2)}
+  .topo nav a:hover{color:var(--creme)}
+  @media(max-width:700px){.topo nav{display:none}}
 
-  /* ---------- hero ---------- */
-  .hero{position:relative;overflow:hidden;text-align:center;padding:40px 0 110px}
-  #brilho{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
-  .hero::before{
-    content:"";position:absolute;left:50%;top:38%;width:900px;height:900px;transform:translate(-50%,-50%);
-    background:radial-gradient(circle,rgba(212,169,94,.13) 0%,rgba(212,169,94,0) 62%);pointer-events:none;
-  }
-  .hero .wrap{position:relative;z-index:1}
-  .logo{width:min(440px,82vw);height:auto;display:block;margin:10px auto 0}
-  .lema{
-    margin:46px auto 0;max-width:22ch;font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;
-    font-size:clamp(34px,5.4vw,58px);line-height:1.08;letter-spacing:-.005em;text-wrap:balance;
-  }
-  .lema em{font-style:italic;background:var(--ouro-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{margin:22px auto 40px;max-width:56ch;color:var(--creme-2);font-size:17px}
-  .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;padding:15px 30px;text-decoration:none;
-    font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-    transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
-  }
-  .btn svg{width:17px;height:17px}
-  .btn.ouro{background:var(--ouro-grad);color:#15110A}
-  .btn.ouro:hover,.btn.ouro:focus-visible{transform:translateY(-2px);outline:none;filter:brightness(1.07)}
-  .btn.linha{border:1px solid var(--linha);color:var(--creme)}
-  .btn.linha:hover,.btn.linha:focus-visible{border-color:var(--ouro);color:var(--ouro-claro);transform:translateY(-2px);outline:none}
+  /* abertura */
+  .abertura{display:grid;gap:56px;align-items:center;padding-top:56px;padding-bottom:112px}
+  @media(min-width:940px){.abertura{grid-template-columns:1.05fr .95fr;gap:64px;padding-top:88px;padding-bottom:140px}}
+  .abertura h1{font-size:clamp(42px,5.2vw,64px);line-height:1.04;letter-spacing:-.01em;max-width:none}
+  .abertura .sub{margin-top:26px;max-width:46ch;font-size:17.5px;color:var(--creme-2)}
+  .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;text-decoration:none;font-size:15px;font-weight:500;transition:background-color .2s ease,border-color .2s ease}
+  .btn svg{width:18px;height:18px;flex:none}
+  .btn-ouro{background:var(--ouro);color:var(--tinta)}
+  .btn-ouro:hover{background:var(--ouro-claro)}
+  .btn-fio{border:1px solid var(--fio);color:var(--creme)}
+  .btn-fio:hover{border-color:var(--ouro)}
 
-  /* ---------- faixa de canais ---------- */
-  .faixa{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--carvao)}
-  .faixa .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 44px;padding-top:24px;padding-bottom:24px}
-  .faixa small{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro)}
-  .canal{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:500;display:inline-flex;align-items:center;gap:10px}
-  .canal i{width:7px;height:7px;border-radius:50%;background:var(--ouro);display:block}
+  /* o anuncio revisado */
+  .revisao{margin:0}
+  .ficha{background:var(--carvao);border:1px solid rgba(239,230,214,.08);border-radius:14px;padding:26px 26px 10px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+  .ficha-topo{display:flex;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid rgba(239,230,214,.08);font-size:13px;color:var(--creme-2)}
+  .ficha-topo strong{color:var(--creme);font-weight:500}
+  .linha{display:grid;grid-template-columns:84px 1fr;gap:4px 16px;padding:20px 0;border-bottom:1px solid rgba(239,230,214,.06)}
+  .linha:last-child{border-bottom:0}
+  .campo{font-size:13px;color:var(--creme-2);padding-top:3px}
+  .valor{font-size:15.5px;line-height:1.5;display:grid;gap:4px;justify-items:start}
+  .nota{grid-column:2;font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.35;color:var(--ouro-claro)}
 
-  /* ---------- secoes ---------- */
-  section{padding:104px 0}
-  .titulo-secao{text-align:center;margin:0 auto 60px}
-  .filete{
-    display:flex;align-items:center;justify-content:center;gap:18px;margin:0 0 18px;
-    font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--ouro);
+  .riscado{position:relative;color:var(--creme-2)}
+  .riscado::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:2px;background:var(--ouro);transform-origin:left center}
+  .corrigido,.inserido{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.2;color:var(--ouro-claro)}
+  .inserido{display:inline-flex;gap:6px;align-items:baseline}
+  .inserido b{font-family:var(--sans);font-weight:600;color:var(--ouro)}
+  .circulado{position:relative;display:inline-block;padding:0 6px}
+  .circulado svg{position:absolute;left:-12px;top:-9px;width:calc(100% + 24px);height:calc(100% + 18px);overflow:visible}
+  .circulado ellipse{fill:none;stroke:var(--ouro);stroke-width:2;stroke-dasharray:260;stroke-dashoffset:0;vector-effect:non-scaling-stroke}
+
+  @media (prefers-reduced-motion: no-preference){
+    .riscado::after{animation:risca .5s ease-out both}
+    .corrigido,.inserido,.nota{animation:surge .5s ease-out both}
+    .circulado ellipse{animation:circula .7s ease-out both}
+    .l1 .riscado::after{animation-delay:.5s}
+    .l1 .corrigido{animation-delay:.95s}
+    .l1 .nota{animation-delay:1.3s}
+    .l2 ellipse{animation-delay:1.7s}
+    .l2 .nota{animation-delay:2.2s}
+    .l3 .riscado::after{animation-delay:2.6s}
+    .l3 .inserido{animation-delay:3s}
+    .l3 .nota{animation-delay:3.35s}
   }
-  .filete::before,.filete::after{content:"";width:46px;height:1px;background:var(--ouro);opacity:.7}
-  h2{
-    margin:0 auto;max-width:22ch;font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;
-    font-size:clamp(34px,4.6vw,52px);line-height:1.06;text-wrap:balance;
-  }
+  @keyframes risca{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes surge{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  @keyframes circula{from{stroke-dashoffset:260}to{stroke-dashoffset:0}}
+  .legenda{margin-top:14px;font-size:13px;color:var(--creme-2)}
 
-  .servicos{display:grid;gap:1px;grid-template-columns:1fr;background:var(--linha);border:1px solid var(--linha)}
-  @media(min-width:760px){.servicos{grid-template-columns:repeat(2,1fr)}}
-  .card{background:var(--carvao);padding:42px 38px;display:grid;gap:14px;align-content:start;transition:background .25s ease}
-  .card:hover{background:var(--carvao-2)}
-  .icone{width:46px;height:46px;color:var(--ouro)}
-  .icone svg{width:100%;height:100%}
-  .card h3{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:28px;line-height:1.15}
-  .card p{margin:0;color:var(--creme-2);font-size:15.5px}
+  /* secoes */
+  .secao{padding:104px 0;border-top:1px solid rgba(239,230,214,.07)}
+  .secao h2{font-size:clamp(34px,4.4vw,52px);line-height:1.08;max-width:18ch}
+  .intro{margin-top:18px;max-width:52ch;color:var(--creme-2);font-size:17px}
 
-  .principios-bg{background:var(--carvao);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
-  .principios{display:grid;gap:44px;grid-template-columns:1fr}
-  @media(min-width:800px){.principios{grid-template-columns:repeat(3,1fr);gap:52px}}
-  .principio{text-align:center}
-  .principio .n{
-    display:block;margin:0 auto 16px;font-family:"Cormorant Garamond",Georgia,serif;font-size:46px;line-height:1;
-    background:var(--ouro-grad);-webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .principio h3{margin:0 0 10px;font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:25px}
-  .principio p{margin:0 auto;max-width:34ch;color:var(--creme-2);font-size:15px}
-  .principio a{color:var(--ouro-claro)}
+  .servicos{margin:56px 0 0;display:grid;grid-template-columns:1fr}
+  @media(min-width:820px){.servicos{grid-template-columns:1fr 1fr;column-gap:64px}}
+  .servico{padding:28px 0;border-top:1px solid var(--fio);display:grid;gap:10px}
+  .servico dt{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.1}
+  .servico dd{margin:0;color:var(--creme-2);max-width:48ch}
 
-  /* ---------- contato ---------- */
-  .contato{text-align:center;position:relative;overflow:hidden}
-  .contato::before{
-    content:"";position:absolute;left:50%;top:50%;width:760px;height:760px;transform:translate(-50%,-50%);
-    background:radial-gradient(circle,rgba(212,169,94,.10) 0%,rgba(212,169,94,0) 60%);pointer-events:none;
-  }
-  .contato .wrap{position:relative}
-  .contato-grade{display:grid;gap:16px;grid-template-columns:1fr;max-width:760px;margin:0 auto}
-  @media(min-width:660px){.contato-grade{grid-template-columns:1fr 1fr}}
-  .bloco{
-    display:flex;align-items:center;gap:18px;text-align:left;padding:26px 28px;text-decoration:none;
-    border:1px solid var(--linha);background:rgba(19,19,21,.7);transition:border-color .2s ease,transform .2s ease;
-  }
-  .bloco:hover,.bloco:focus-visible{border-color:var(--ouro);transform:translateY(-3px);outline:none}
-  .bloco svg{width:30px;height:30px;flex:none;color:var(--ouro)}
-  .bloco span{display:grid;line-height:1.35;min-width:0}
-  .bloco small{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro)}
-  .bloco strong{font-size:17px;font-weight:500;overflow-wrap:anywhere}
+  .etapas{list-style:none;margin:56px 0 0;padding:0;display:grid;gap:40px;counter-reset:etapa}
+  @media(min-width:760px){.etapas{grid-template-columns:repeat(2,1fr);gap:48px 56px}}
+  @media(min-width:1040px){.etapas{grid-template-columns:repeat(4,1fr);gap:40px}}
+  .etapas li{counter-increment:etapa;display:grid;gap:10px;align-content:start}
+  .etapas li::before{content:counter(etapa);font-family:var(--serif);font-size:56px;line-height:1;color:var(--ouro)}
+  .etapas h3{font-size:26px;font-weight:600;line-height:1.15}
+  .etapas p{color:var(--creme-2);font-size:15.5px}
 
-  footer{border-top:1px solid var(--linha)}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;align-items:center;padding-top:30px;padding-bottom:30px;font-size:13px;color:var(--creme-2)}
-  footer a{color:var(--creme-2);text-decoration:none;border-bottom:1px solid var(--linha)}
-  footer a:hover{color:var(--ouro-claro)}
+  .garantia{margin-top:64px;padding:26px 30px;border-left:2px solid var(--ouro);background:var(--carvao);border-radius:0 12px 12px 0;max-width:760px}
+  .garantia p{font-family:var(--serif);font-size:23px;line-height:1.35}
+  .garantia a{color:var(--ouro-claro)}
 
-  @media (prefers-reduced-motion: reduce){ .btn,.bloco,.card{transition:none} html{scroll-behavior:auto} }
+  .contato{display:grid;gap:40px;align-items:end}
+  @media(min-width:900px){.contato{grid-template-columns:1fr auto}}
+  .canais{display:grid;gap:12px;min-width:min(100%,360px)}
+  .canal{display:flex;align-items:center;gap:16px;padding:18px 22px;border:1px solid var(--fio);border-radius:12px;text-decoration:none;transition:border-color .2s ease,background-color .2s ease}
+  .canal:hover{border-color:var(--ouro);background:var(--carvao)}
+  .canal svg{width:24px;height:24px;flex:none;color:var(--ouro)}
+  .canal span{display:grid;line-height:1.35;min-width:0}
+  .canal small{font-size:13px;color:var(--creme-2)}
+  .canal strong{font-weight:500;overflow-wrap:anywhere}
+
+  footer{border-top:1px solid rgba(239,230,214,.07)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:28px;padding-bottom:28px;font-size:14px;color:var(--creme-2)}
+  footer a{color:var(--creme-2)}
+  footer a:hover{color:var(--creme)}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="marca-mini" href="./" aria-label="Agency Gogh, página inicial">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <defs><linearGradient id="og1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A8793F"/><stop offset=".5" stop-color="#EBCB8B"/><stop offset="1" stop-color="#B8894A"/></linearGradient></defs>
-        <text x="4" y="76" font-family="Cormorant Garamond, Georgia, serif" font-size="86" fill="#EFE8DC">G</text>
-        <text x="40" y="92" font-family="Cormorant Garamond, Georgia, serif" font-size="62" fill="url(#og1)">G</text>
-      </svg>
-      <span>GOGH</span>
-    </a>
-    <nav aria-label="Principal">
-      <a href="#servicos">Serviços</a>
-      <a href="#como">Como trabalhamos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
+<header class="wrap topo">
+  <a class="marca" href="./" aria-label="Agency Gogh, início">
+    <img src="gogh-avatar.png" alt="" width="40" height="40">
+    <span>Agency Gogh</span>
+  </a>
+  <nav aria-label="Principal">
+    <a href="#servicos">O que fazemos</a>
+    <a href="#como">Como trabalhamos</a>
+    <a href="#contato">Contato</a>
+  </nav>
 </header>
 
-<div class="hero">
-  <canvas id="brilho" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <svg class="logo" viewBox="0 0 600 560" role="img" aria-label="Agency Gogh — Estratégia, Gestão, Resultados">
-      <defs>
-        <linearGradient id="ouro" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#A8793F"/><stop offset=".48" stop-color="#EBCB8B"/><stop offset="1" stop-color="#B8894A"/>
-        </linearGradient>
-      </defs>
-      <text x="300" y="262" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" font-size="300" fill="#EFE8DC" dx="-46">G</text>
-      <text x="300" y="300" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" font-size="200" fill="url(#ouro)" dx="62">G</text>
-      <line x1="120" y1="355" x2="196" y2="355" stroke="url(#ouro)" stroke-width="2"/>
-      <line x1="404" y1="355" x2="480" y2="355" stroke="url(#ouro)" stroke-width="2"/>
-      <text x="300" y="366" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="400" font-size="30" letter-spacing="13" fill="url(#ouro)">AGENCY</text>
-      <text x="300" y="462" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" font-size="112" letter-spacing="22" fill="#EFE8DC">GOGH</text>
-      <text x="300" y="522" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="500" font-size="19" letter-spacing="3.4" fill="url(#ouro)">ESTRATÉGIA • GESTÃO • RESULTADOS</text>
-    </svg>
-
-    <p class="lema">Sua loja vendendo mais, <em>com método.</em></p>
-    <p class="sub">Gerimos contas de vendedores na Shopee, no Mercado Livre e no TikTok Shop — do catálogo à mídia paga, com cada decisão apoiada em dado.</p>
-    <div class="cta">
-      <a class="btn ouro" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        Fale com a gente
-      </a>
-      <a class="btn linha" href="#servicos">Nossos serviços</a>
-    </div>
-  </div>
-</div>
-
-<div class="faixa">
-  <div class="wrap">
-    <small>Onde atuamos</small>
-    <span class="canal"><i></i>Shopee</span>
-    <span class="canal"><i></i>Mercado Livre</span>
-    <span class="canal"><i></i>TikTok Shop</span>
-  </div>
-</div>
-
-<section id="servicos">
-  <div class="wrap">
-    <div class="titulo-secao">
-      <p class="filete">Serviços</p>
-      <h2>Tudo que a sua conta precisa para crescer.</h2>
-    </div>
-    <div class="servicos">
-      <article class="card">
-        <div class="icone"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="7" y="7" width="34" height="34"/><path d="M14 17h20M14 24h20M14 31h12"/></svg></div>
-        <h3>Gestão de catálogo</h3>
-        <p>Anúncios cadastrados e corrigidos em volume: título, categoria, marca, fotos e atributos que colocam o produto na busca.</p>
-      </article>
-      <article class="card">
-        <div class="icone"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l7 5"/></svg></div>
-        <h3>Operação da conta</h3>
-        <p>Estoque, preço, reputação e atendimento acompanhados de perto, para a loja crescer sem perder saúde.</p>
-      </article>
-      <article class="card">
-        <div class="icone"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="12" width="26" height="24"/><path d="M32 20l10-6v20l-10-6z"/></svg></div>
-        <h3>Conteúdo em vídeo</h3>
-        <p>Vídeos de produto para as páginas de anúncio e para o TikTok Shop, feitos para mostrar o que o comprador quer ver antes de comprar.</p>
-      </article>
-      <article class="card">
-        <div class="icone"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M7 35l12-12 8 8 14-14"/><path d="M31 17h10v10"/></svg></div>
-        <h3>Mídia paga</h3>
-        <p>Campanhas nos marketplaces e nas redes, com meta de retorno definida antes do primeiro real investido.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="principios-bg" id="como">
-  <div class="wrap">
-    <div class="titulo-secao">
-      <p class="filete">Como trabalhamos</p>
-      <h2>Três regras que não negociamos.</h2>
-    </div>
-    <div class="principios">
-      <div class="principio">
-        <span class="n">I</span>
-        <h3>Nada muda sem o seu aval</h3>
-        <p>Analisar e recomendar é o nosso trabalho. Alterar qualquer coisa na sua loja só acontece com a sua aprovação.</p>
-      </div>
-      <div class="principio">
-        <span class="n">II</span>
-        <h3>Toda recomendação tem número</h3>
-        <p>Cada sugestão chega com o dado que a sustenta. Palpite não entra na sua conta.</p>
-      </div>
-      <div class="principio">
-        <span class="n">III</span>
-        <h3>Seus dados protegidos</h3>
-        <p>Acesso só pela autorização oficial das plataformas — nunca por senha — e revogável quando você quiser. <a href="privacidade.html">Nossa política</a>.</p>
+<main>
+  <section class="wrap abertura">
+    <div>
+      <h1>Sua loja revisada,<br> anúncio por anúncio.</h1>
+      <p class="sub">A Gogh cuida de contas na Shopee, no Mercado Livre e no TikTok Shop: corrige o catálogo, protege a reputação, roda os anúncios pagos e produz o vídeo do produto.</p>
+      <div class="acoes">
+        <a class="btn btn-ouro" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          Chamar no Instagram
+        </a>
+        <a class="btn btn-fio" href="mailto:goghconsultoria@gmail.com">Enviar e-mail</a>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="contato" id="contato">
-  <div class="wrap">
-    <div class="titulo-secao">
-      <p class="filete">Contato</p>
-      <h2>Vamos conversar sobre a sua loja.</h2>
+    <figure class="revisao">
+      <div class="ficha">
+        <div class="ficha-topo"><strong>Anúncio em revisão</strong><span>Shopee</span></div>
+        <div class="linha l1">
+          <div class="campo">Título</div>
+          <div class="valor">
+            <span class="riscado">tenis masculino kit promoçao top</span>
+            <span class="corrigido">Tênis casual masculino em couro, preto</span>
+          </div>
+          <p class="nota">o título precisa ter o que o comprador digita na busca</p>
+        </div>
+        <div class="linha l2">
+          <div class="campo">Categoria</div>
+          <div class="valor">
+            <span class="circulado">Outros<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="20" rx="48" ry="17" transform="rotate(-3 50 20)"/></svg></span>
+          </div>
+          <p class="nota">categoria errada limita o alcance do anúncio</p>
+        </div>
+        <div class="linha l3">
+          <div class="campo">Vídeo</div>
+          <div class="valor">
+            <span class="riscado">nenhum</span>
+            <span class="inserido"><b aria-hidden="true">+</b>vídeo do produto sendo usado</span>
+          </div>
+          <p class="nota">o comprador quer ver antes de comprar</p>
+        </div>
+      </div>
+      <figcaption class="legenda">Exemplo ilustrativo do que revisamos em cada anúncio.</figcaption>
+    </figure>
+  </section>
+
+  <section class="secao" id="servicos">
+    <div class="wrap">
+      <h2>O que a Gogh faz na sua conta</h2>
+      <dl class="servicos">
+        <div class="servico">
+          <dt>Catálogo</dt>
+          <dd>Cadastro e correção de anúncios em volume: título, categoria, atributos, fotos e variações. É o que coloca o produto na busca.</dd>
+        </div>
+        <div class="servico">
+          <dt>Operação da conta</dt>
+          <dd>Prazo de envio, estoque, preço e reputação acompanhados toda semana, para a loja não tomar ponto de penalidade nem perder benefício da plataforma.</dd>
+        </div>
+        <div class="servico">
+          <dt>Anúncios pagos</dt>
+          <dd>Shopee Ads, Mercado Livre Ads, TikTok e Meta, com meta de retorno combinada antes do primeiro real investido.</dd>
+        </div>
+        <div class="servico">
+          <dt>Vídeo e imagem</dt>
+          <dd>Conteúdo de produto para a página do anúncio e para o TikTok Shop. O que é feito com inteligência artificial vai identificado, como as plataformas exigem.</dd>
+        </div>
+      </dl>
     </div>
-    <div class="contato-grade">
-      <a class="bloco" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        <span><small>Instagram</small><strong>@agency.gogh</strong></span>
-      </a>
-      <a class="bloco" href="mailto:goghconsultoria@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 7l9 6 9-6"/></svg>
-        <span><small>E-mail</small><strong>goghconsultoria@gmail.com</strong></span>
-      </a>
+  </section>
+
+  <section class="secao" id="como">
+    <div class="wrap">
+      <h2>Do diagnóstico ao acompanhamento</h2>
+      <ol class="etapas">
+        <li>
+          <h3>Diagnóstico</h3>
+          <p>Olhamos a loja inteira: saúde da conta, vendas dos últimos 30 dias, produtos limitados e o que recebe visita sem vender.</p>
+        </li>
+        <li>
+          <h3>Plano</h3>
+          <p>Você recebe o que fazer primeiro, em ordem de impacto, com o número que justifica cada item.</p>
+        </li>
+        <li>
+          <h3>Execução</h3>
+          <p>Colocamos o plano em prática. Nada muda na sua loja sem a sua aprovação.</p>
+        </li>
+        <li>
+          <h3>Acompanhamento</h3>
+          <p>Revisão semanal dos indicadores e registro de cada decisão, para o que funcionou virar rotina.</p>
+        </li>
+      </ol>
+      <div class="garantia">
+        <p>Sempre que a plataforma oferece, a conexão com a sua loja é feita pela autorização oficial, e você pode revogar quando quiser. <a href="privacidade.html">Leia a nossa política de privacidade</a>.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="secao" id="contato">
+    <div class="wrap contato">
+      <div>
+        <h2>Vamos olhar a sua loja</h2>
+        <p class="intro">Conte em qual marketplace você vende e o que está travando. A gente responde pelo Instagram ou por e-mail.</p>
+      </div>
+      <div class="canais">
+        <a class="canal" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span><small>Instagram</small><strong>@agency.gogh</strong></span>
+        </a>
+        <a class="canal" href="mailto:goghconsultoria@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span><small>E-mail</small><strong>goghconsultoria@gmail.com</strong></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Agency Gogh · Estratégia · Gestão · Resultados</span>
-    <a href="privacidade.html">Política de Segurança e Privacidade</a>
+    <span>© 2026 Agency Gogh. Estratégia, gestão e resultados em marketplace.</span>
+    <a href="privacidade.html">Política de segurança e privacidade</a>
   </div>
 </footer>
 
-<script>
-/* Poeira dourada: pontos finos subindo devagar sobre o preto. Quadro
-   estatico quando o sistema pede menos movimento. */
-(function(){
-  var cv = document.getElementById('brilho'); if(!cv || !cv.getContext) return;
-  var cx = cv.getContext('2d'), W, H, pts = [];
-  var calmo = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function tam(){
-    var dpr = Math.min(window.devicePixelRatio||1, 2);
-    W = cv.clientWidth; H = cv.clientHeight;
-    cv.width = W*dpr; cv.height = H*dpr; cx.setTransform(dpr,0,0,dpr,0,0);
-    pts = [];
-    var n = Math.round(W*H/9000);
-    for (var i=0;i<n;i++) pts.push({ x:Math.random()*W, y:Math.random()*H, r:.4+Math.random()*1.4, v:.08+Math.random()*.25, f:Math.random()*6.28, a:.15+Math.random()*.5 });
-    desenha(0);
-  }
-  function desenha(t){
-    cx.clearRect(0,0,W,H);
-    for (var i=0;i<pts.length;i++){
-      var p = pts[i];
-      var a = p.a * (.55 + .45*Math.sin(t*.001 + p.f));
-      cx.fillStyle = 'rgba(235,203,139,' + a.toFixed(3) + ')';
-      cx.beginPath(); cx.arc(p.x, p.y, p.r, 0, 6.2832); cx.fill();
-    }
-  }
-  function loop(t){
-    for (var i=0;i<pts.length;i++){ var p = pts[i]; p.y -= p.v; p.x += Math.sin(t*.0004 + p.f)*.12; if (p.y < -4){ p.y = H+4; p.x = Math.random()*W; } }
-    desenha(t); requestAnimationFrame(loop);
-  }
-  tam();
-  if (!calmo) requestAnimationFrame(loop);
-  var tmo; window.addEventListener('resize', function(){ clearTimeout(tmo); tmo = setTimeout(tam, 200); });
-})();
-</script>
 </body>
 </html>
