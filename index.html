@@ -2,231 +2,199 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Agency Gogh | Gestão de Shopee, Mercado Livre e TikTok Shop</title>
-<meta name="description" content="A Gogh cuida de contas na Shopee, no Mercado Livre e no TikTok Shop: catálogo, reputação, anúncios pagos e vídeo de produto.">
-<meta name="theme-color" content="#15110D">
+<meta name="description" content="A Gogh cuida da sua loja na Shopee, no Mercado Livre e no TikTok Shop: catálogo, reputação, anúncios pagos e vídeo de produto. Fale com um especialista.">
+<meta name="theme-color" content="#030303">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Agency Gogh">
-<meta property="og:description" content="Sua loja revisada, anúncio por anúncio. Gestão de Shopee, Mercado Livre e TikTok Shop.">
-<meta property="og:image" content="https://gogh-lab.github.io/gogh-avatar.png">
+<meta property="og:site_name" content="Agency Gogh">
+<meta property="og:title" content="Agency Gogh | Sua loja revisada, anúncio por anúncio">
+<meta property="og:description" content="Gestão de Shopee, Mercado Livre e TikTok Shop: catálogo, reputação, anúncios pagos e vídeo de produto.">
+<meta property="og:image" content="https://gogh-lab.github.io/assets/og-gogh.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
-<link rel="icon" type="image/png" href="gogh-avatar.png">
-<link rel="apple-touch-icon" href="gogh-avatar.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --tinta:#15110D;
-    --carvao:#1F1914;
-    --creme:#EFE6D6;
-    --creme-2:#B3A895;
-    --ouro:#C9A063;
-    --ouro-claro:#E3C58C;
-    --fio:rgba(201,160,99,.28);
-    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-    --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{background:var(--tinta);scroll-behavior:smooth}
-  body{margin:0;background:var(--tinta);color:var(--creme);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  :focus-visible{outline:2px solid var(--ouro-claro);outline-offset:4px}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-  h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance}
-  p{margin:0}
-
-  /* topo */
-  .topo{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:22px;padding-bottom:22px}
-  .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-  .marca img{width:40px;height:40px;border-radius:8px;display:block}
-  .marca span{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:.02em}
-  .topo nav{display:flex;gap:28px;font-size:14px}
-  .topo nav a{text-decoration:none;color:var(--creme-2)}
-  .topo nav a:hover{color:var(--creme)}
-  @media(max-width:700px){.topo nav{display:none}}
-
-  /* abertura */
-  .abertura{display:grid;gap:56px;align-items:center;padding-top:56px;padding-bottom:112px}
-  @media(min-width:940px){.abertura{grid-template-columns:1.05fr .95fr;gap:64px;padding-top:88px;padding-bottom:140px}}
-  .abertura h1{font-size:clamp(42px,5.2vw,64px);line-height:1.04;letter-spacing:-.01em;max-width:none}
-  .abertura .sub{margin-top:26px;max-width:46ch;font-size:17.5px;color:var(--creme-2)}
-  .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-  .btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;text-decoration:none;font-size:15px;font-weight:500;transition:background-color .2s ease,border-color .2s ease}
-  .btn svg{width:18px;height:18px;flex:none}
-  .btn-ouro{background:var(--ouro);color:var(--tinta)}
-  .btn-ouro:hover{background:var(--ouro-claro)}
-  .btn-fio{border:1px solid var(--fio);color:var(--creme)}
-  .btn-fio:hover{border-color:var(--ouro)}
-
-  /* o anuncio revisado */
-  .revisao{margin:0}
-  .ficha{background:var(--carvao);border:1px solid rgba(239,230,214,.08);border-radius:14px;padding:26px 26px 10px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
-  .ficha-topo{display:flex;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid rgba(239,230,214,.08);font-size:13px;color:var(--creme-2)}
-  .ficha-topo strong{color:var(--creme);font-weight:500}
-  .linha{display:grid;grid-template-columns:84px 1fr;gap:4px 16px;padding:20px 0;border-bottom:1px solid rgba(239,230,214,.06)}
-  .linha:last-child{border-bottom:0}
-  .campo{font-size:13px;color:var(--creme-2);padding-top:3px}
-  .valor{font-size:15.5px;line-height:1.5;display:grid;gap:4px;justify-items:start}
-  .nota{grid-column:2;font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.35;color:var(--ouro-claro)}
-
-  .riscado{position:relative;color:var(--creme-2)}
-  .riscado::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:2px;background:var(--ouro);transform-origin:left center}
-  .corrigido,.inserido{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.2;color:var(--ouro-claro)}
-  .inserido{display:inline-flex;gap:6px;align-items:baseline}
-  .inserido b{font-family:var(--sans);font-weight:600;color:var(--ouro)}
-  .circulado{position:relative;display:inline-block;padding:0 6px}
-  .circulado svg{position:absolute;left:-12px;top:-9px;width:calc(100% + 24px);height:calc(100% + 18px);overflow:visible}
-  .circulado ellipse{fill:none;stroke:var(--ouro);stroke-width:2;stroke-dasharray:260;stroke-dashoffset:0;vector-effect:non-scaling-stroke}
-
-  @media (prefers-reduced-motion: no-preference){
-    .riscado::after{animation:risca .5s ease-out both}
-    .corrigido,.inserido,.nota{animation:surge .5s ease-out both}
-    .circulado ellipse{animation:circula .7s ease-out both}
-    .l1 .riscado::after{animation-delay:.5s}
-    .l1 .corrigido{animation-delay:.95s}
-    .l1 .nota{animation-delay:1.3s}
-    .l2 ellipse{animation-delay:1.7s}
-    .l2 .nota{animation-delay:2.2s}
-    .l3 .riscado::after{animation-delay:2.6s}
-    .l3 .inserido{animation-delay:3s}
-    .l3 .nota{animation-delay:3.35s}
-  }
-  @keyframes risca{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  @keyframes surge{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-  @keyframes circula{from{stroke-dashoffset:260}to{stroke-dashoffset:0}}
-  .legenda{margin-top:14px;font-size:13px;color:var(--creme-2)}
-
-  /* secoes */
-  .secao{padding:104px 0;border-top:1px solid rgba(239,230,214,.07)}
-  .secao h2{font-size:clamp(34px,4.4vw,52px);line-height:1.08;max-width:18ch}
-  .intro{margin-top:18px;max-width:52ch;color:var(--creme-2);font-size:17px}
-
-  .servicos{margin:56px 0 0;display:grid;grid-template-columns:1fr}
-  @media(min-width:820px){.servicos{grid-template-columns:1fr 1fr;column-gap:64px}}
-  .servico{padding:28px 0;border-top:1px solid var(--fio);display:grid;gap:10px}
-  .servico dt{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.1}
-  .servico dd{margin:0;color:var(--creme-2);max-width:48ch}
-
-  .etapas{list-style:none;margin:56px 0 0;padding:0;display:grid;gap:40px;counter-reset:etapa}
-  @media(min-width:760px){.etapas{grid-template-columns:repeat(2,1fr);gap:48px 56px}}
-  @media(min-width:1040px){.etapas{grid-template-columns:repeat(4,1fr);gap:40px}}
-  .etapas li{counter-increment:etapa;display:grid;gap:10px;align-content:start}
-  .etapas li::before{content:counter(etapa);font-family:var(--serif);font-size:56px;line-height:1;color:var(--ouro)}
-  .etapas h3{font-size:26px;font-weight:600;line-height:1.15}
-  .etapas p{color:var(--creme-2);font-size:15.5px}
-
-  .garantia{margin-top:64px;padding:26px 30px;border-left:2px solid var(--ouro);background:var(--carvao);border-radius:0 12px 12px 0;max-width:760px}
-  .garantia p{font-family:var(--serif);font-size:23px;line-height:1.35}
-  .garantia a{color:var(--ouro-claro)}
-
-  .contato{display:grid;gap:40px;align-items:end}
-  @media(min-width:900px){.contato{grid-template-columns:1fr auto}}
-  .canais{display:grid;gap:12px;min-width:min(100%,360px)}
-  .canal{display:flex;align-items:center;gap:16px;padding:18px 22px;border:1px solid var(--fio);border-radius:12px;text-decoration:none;transition:border-color .2s ease,background-color .2s ease}
-  .canal:hover{border-color:var(--ouro);background:var(--carvao)}
-  .canal svg{width:24px;height:24px;flex:none;color:var(--ouro)}
-  .canal span{display:grid;line-height:1.35;min-width:0}
-  .canal small{font-size:13px;color:var(--creme-2)}
-  .canal strong{font-weight:500;overflow-wrap:anywhere}
-
-  footer{border-top:1px solid rgba(239,230,214,.07)}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:28px;padding-bottom:28px;font-size:14px;color:var(--creme-2)}
-  footer a{color:var(--creme-2)}
-  footer a:hover{color:var(--creme)}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="wrap topo">
-  <a class="marca" href="./" aria-label="Agency Gogh, início">
-    <img src="gogh-avatar.png" alt="" width="40" height="40">
-    <span>Agency Gogh</span>
-  </a>
-  <nav aria-label="Principal">
-    <a href="#servicos">O que fazemos</a>
-    <a href="#como">Como trabalhamos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="./" aria-label="Agency Gogh, início">
+      <img src="assets/gogh-gg.png" alt="" width="44" height="44">
+      <span>Agency Gogh</span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#servicos">O que fazemos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-ouro btn-pequeno" href="https://ig.me/m/agency.gogh" target="_blank" rel="noopener noreferrer" data-especialista>Falar com especialista</a>
+  </div>
 </header>
 
-<main>
-  <section class="wrap abertura">
-    <div>
-      <h1>Sua loja revisada,<br> anúncio por anúncio.</h1>
-      <p class="sub">A Gogh cuida de contas na Shopee, no Mercado Livre e no TikTok Shop: corrige o catálogo, protege a reputação, roda os anúncios pagos e produz o vídeo do produto.</p>
-      <div class="acoes">
-        <a class="btn btn-ouro" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-          Chamar no Instagram
-        </a>
-        <a class="btn btn-fio" href="mailto:goghconsultoria@gmail.com">Enviar e-mail</a>
-      </div>
-    </div>
+<main id="conteudo">
 
-    <figure class="revisao">
-      <div class="ficha">
-        <div class="ficha-topo"><strong>Anúncio em revisão</strong><span>Shopee</span></div>
-        <div class="linha l1">
-          <div class="campo">Título</div>
-          <div class="valor">
-            <span class="riscado">tenis masculino kit promoçao top</span>
-            <span class="corrigido">Tênis casual masculino em couro, preto</span>
-          </div>
-          <p class="nota">o título precisa ter o que o comprador digita na busca</p>
+  <section class="abertura">
+    <div class="brilho-2" aria-hidden="true"></div>
+    <div class="wrap grade">
+      <div>
+        <h1>Sua loja revisada, <span class="dourado">anúncio por anúncio.</span></h1>
+        <p class="sub">A Gogh cuida da sua conta na Shopee, no Mercado Livre e no TikTok Shop: arruma o catálogo, protege a reputação, roda os anúncios pagos e produz o vídeo do produto.</p>
+        <div class="acoes">
+          <a class="btn btn-ouro" href="https://ig.me/m/agency.gogh" target="_blank" rel="noopener noreferrer" data-especialista>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            Falar com especialista
+          </a>
+          <a class="btn btn-fio" href="#como-funciona">Ver como funciona</a>
         </div>
-        <div class="linha l2">
-          <div class="campo">Categoria</div>
-          <div class="valor">
-            <span class="circulado">Outros<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="20" rx="48" ry="17" transform="rotate(-3 50 20)"/></svg></span>
-          </div>
-          <p class="nota">categoria errada limita o alcance do anúncio</p>
-        </div>
-        <div class="linha l3">
-          <div class="campo">Vídeo</div>
-          <div class="valor">
-            <span class="riscado">nenhum</span>
-            <span class="inserido"><b aria-hidden="true">+</b>vídeo do produto sendo usado</span>
-          </div>
-          <p class="nota">o comprador quer ver antes de comprar</p>
-        </div>
+        <ul class="promessas">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Operação, anúncios e conteúdo no mesmo time</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Toda recomendação chega com o número que a justifica</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Nada muda na sua loja sem a sua aprovação</li>
+        </ul>
       </div>
-      <figcaption class="legenda">Exemplo ilustrativo do que revisamos em cada anúncio.</figcaption>
-    </figure>
-  </section>
 
-  <section class="secao" id="servicos">
-    <div class="wrap">
-      <h2>O que a Gogh faz na sua conta</h2>
-      <dl class="servicos">
-        <div class="servico">
-          <dt>Catálogo</dt>
-          <dd>Cadastro e correção de anúncios em volume: título, categoria, atributos, fotos e variações. É o que coloca o produto na busca.</dd>
+      <figure class="revisao">
+        <div class="ficha">
+          <div class="ficha-topo">
+            <strong>Anúncio em revisão</strong>
+            <span class="selo"><img src="assets/shopee-cor.svg" alt="" width="16" height="16">Shopee</span>
+          </div>
+          <div class="linha l1">
+            <div class="campo">Título</div>
+            <div class="valor">
+              <span class="riscado">tenis masculino kit promoçao top</span>
+              <span class="corrigido">Tênis casual masculino em couro, preto</span>
+            </div>
+            <p class="nota">o título precisa ter o que o comprador digita na busca</p>
+          </div>
+          <div class="linha l2">
+            <div class="campo">Categoria</div>
+            <div class="valor">
+              <span class="circulado">Outros<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="20" rx="48" ry="17" transform="rotate(-3 50 20)"/></svg></span>
+            </div>
+            <p class="nota">categoria errada limita o alcance do anúncio</p>
+          </div>
+          <div class="linha l3">
+            <div class="campo">Vídeo</div>
+            <div class="valor">
+              <span class="riscado">nenhum</span>
+              <span class="inserido"><b aria-hidden="true">+</b>vídeo do produto sendo usado</span>
+            </div>
+            <p class="nota">o comprador quer ver antes de comprar</p>
+          </div>
         </div>
-        <div class="servico">
-          <dt>Operação da conta</dt>
-          <dd>Prazo de envio, estoque, preço e reputação acompanhados toda semana, para a loja não tomar ponto de penalidade nem perder benefício da plataforma.</dd>
-        </div>
-        <div class="servico">
-          <dt>Anúncios pagos</dt>
-          <dd>Shopee Ads, Mercado Livre Ads, TikTok e Meta, com meta de retorno combinada antes do primeiro real investido.</dd>
-        </div>
-        <div class="servico">
-          <dt>Vídeo e imagem</dt>
-          <dd>Conteúdo de produto para a página do anúncio e para o TikTok Shop. O que é feito com inteligência artificial vai identificado, como as plataformas exigem.</dd>
-        </div>
-      </dl>
+        <figcaption class="legenda">Exemplo ilustrativo do que revisamos em cada anúncio.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="secao" id="como">
+  <section class="canais" aria-label="Marketplaces em que atuamos">
     <div class="wrap">
-      <h2>Do diagnóstico ao acompanhamento</h2>
+      <p>Onde a Gogh atua</p>
+      <ul class="logos">
+        <li><img src="assets/shopee.svg" alt="" width="30" height="30">Shopee</li>
+        <li class="ml"><img src="assets/mercadolivre.svg" alt="Mercado Livre" width="112" height="44"></li>
+        <li><img src="assets/tiktok.svg" alt="" width="30" height="30">TikTok Shop</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" id="onde-trava">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2>Onde a venda costuma travar</h2>
+        <p>Muitas vezes o problema não é o produto. É um detalhe que a plataforma pune em silêncio, e o vendedor só percebe quando a venda cai.</p>
+      </div>
+      <ul class="travas">
+        <li class="trava">
+          <h3>Envio fora do prazo</h3>
+          <p>Na Shopee, atraso recorrente vira ponto de penalidade. Com pontos acumulados, a loja perde campanhas e visibilidade.</p>
+        </li>
+        <li class="trava">
+          <h3>Anúncio na categoria errada</h3>
+          <p>A plataforma limita o anúncio e ele deixa de aparecer na busca, mesmo com estoque e preço certos.</p>
+        </li>
+        <li class="trava">
+          <h3>Título que ninguém procura</h3>
+          <p>Se o título não tem as palavras que o comprador digita, o produto não aparece para quem quer comprar.</p>
+        </li>
+        <li class="trava">
+          <h3>Preço na faixa errada</h3>
+          <p>Na Shopee, a tarifa muda por faixa de preço. Alguns centavos acima da faixa podem fazer você receber menos por venda.</p>
+        </li>
+        <li class="trava">
+          <h3>Anúncio pago sem meta</h3>
+          <p>Campanha ligada sem meta de retorno gasta verba em clique que não vira venda.</p>
+        </li>
+        <li class="trava">
+          <h3>TikTok Shop sem vídeo</h3>
+          <p>No TikTok Shop, a venda nasce do vídeo. Sem conteúdo toda semana, o produto não chega em quem compra.</p>
+        </li>
+      </ul>
+      <div class="convite">
+        <p>Quer saber quais desses estão acontecendo na sua loja?</p>
+        <a class="btn btn-ouro" href="https://ig.me/m/agency.gogh" target="_blank" rel="noopener noreferrer" data-especialista>Falar com especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao escura" id="servicos">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2>O que a Gogh faz na sua conta</h2>
+        <p>Um time que cuida da loja inteira, para você não precisar juntar três fornecedores diferentes.</p>
+      </div>
+      <div class="servicos">
+        <article class="servico">
+          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6"/></svg></span>
+          <h3>Catálogo</h3>
+          <p>Cadastro e correção de anúncios em volume: título, categoria, atributos, fotos e variações. É o que coloca o produto na busca.</p>
+        </article>
+        <article class="servico">
+          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Operação da conta</h3>
+          <p>Prazo de envio, estoque, preço e reputação acompanhados toda semana, para a loja não tomar ponto de penalidade nem perder benefício da plataforma.</p>
+        </article>
+        <article class="servico">
+          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+          <h3>Anúncios pagos</h3>
+          <p>Shopee Ads, Mercado Livre Ads, TikTok e Meta, com meta de retorno combinada antes do primeiro real investido.</p>
+        </article>
+        <article class="servico">
+          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg></span>
+          <h3>Vídeo e imagem</h3>
+          <p>Conteúdo de produto para a página do anúncio e para o TikTok Shop. O que é feito com inteligência artificial vai identificado, como as plataformas exigem.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="como-funciona">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2>Como funciona</h2>
+        <p>Primeiro a gente entende a sua loja. Só depois propõe o que fazer.</p>
+      </div>
       <ol class="etapas">
         <li>
+          <h3>Conversa</h3>
+          <p>Você conta onde vende, o que está travando e o que já tentou.</p>
+        </li>
+        <li>
           <h3>Diagnóstico</h3>
-          <p>Olhamos a loja inteira: saúde da conta, vendas dos últimos 30 dias, produtos limitados e o que recebe visita sem vender.</p>
+          <p>Olhamos a saúde da conta, as vendas recentes, os anúncios limitados e o que recebe visita sem vender.</p>
         </li>
         <li>
           <h3>Plano</h3>
@@ -234,45 +202,139 @@
         </li>
         <li>
           <h3>Execução</h3>
-          <p>Colocamos o plano em prática. Nada muda na sua loja sem a sua aprovação.</p>
-        </li>
-        <li>
-          <h3>Acompanhamento</h3>
-          <p>Revisão semanal dos indicadores e registro de cada decisão, para o que funcionou virar rotina.</p>
+          <p>Colocamos o plano em prática e revisamos os resultados toda semana com você.</p>
         </li>
       </ol>
-      <div class="garantia">
-        <p>Sempre que a plataforma oferece, a conexão com a sua loja é feita pela autorização oficial, e você pode revogar quando quiser. <a href="privacidade.html">Leia a nossa política de privacidade</a>.</p>
+    </div>
+  </section>
+
+  <section class="secao escura" id="compromissos">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2>O que você pode cobrar da gente</h2>
+      </div>
+      <ul class="compromissos">
+        <li><strong>Nada muda sem a sua aprovação.</strong><span>Analisar e recomendar é o nosso trabalho. Mexer em preço, anúncio ou verba na sua loja só acontece com o seu ok.</span></li>
+        <li><strong>Toda recomendação tem número.</strong><span>Cada sugestão chega com o dado da sua conta que a sustenta. Palpite não entra na sua loja.</span></li>
+        <li><strong>Sem promessa de milagre.</strong><span>Se um resultado depende de tempo, de estoque ou da plataforma, a gente diz isso antes de você decidir.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" id="equipe">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2>Quem cuida da sua loja</h2>
+        <p>Um time pequeno, com operação e mídia trabalhando juntas na mesma conta.</p>
+      </div>
+      <ul class="equipe">
+        <li class="pessoa">
+          <div class="retrato"><span class="inicial" aria-hidden="true">H</span></div>
+          <h3>Heitor</h3>
+          <p>Sócio. Mídia, criação e automação</p>
+        </li>
+        <li class="pessoa">
+          <div class="retrato"><span class="inicial" aria-hidden="true">T</span></div>
+          <h3>Theo</h3>
+          <p>Sócio. Operação e comercial</p>
+        </li>
+        <li class="pessoa">
+          <div class="retrato"><span class="inicial" aria-hidden="true">O</span></div>
+          <h3>Otávio</h3>
+          <p>Operação</p>
+        </li>
+        <li class="pessoa">
+          <div class="retrato"><span class="inicial" aria-hidden="true">J</span></div>
+          <h3>Júlio</h3>
+          <p>Operação</p>
+        </li>
+        <li class="pessoa">
+          <div class="retrato"><span class="inicial" aria-hidden="true">D</span></div>
+          <h3>Davi</h3>
+          <p>Mídia</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao escura" id="duvidas">
+    <div class="wrap duvidas-grade">
+      <div class="cabeca">
+        <h2>Dúvidas comuns</h2>
+        <p>Não achou a sua? Pergunte direto para um especialista.</p>
+      </div>
+      <div class="duvidas">
+        <details>
+          <summary>Vocês cuidam só dos anúncios pagos?</summary>
+          <p>Não. A Gogh cuida da operação da conta, do catálogo, dos anúncios pagos e do conteúdo. Muitas vezes a venda trava num anúncio mal cadastrado ou num prazo de envio, e só mexer no anúncio pago não resolve.</p>
+        </details>
+        <details>
+          <summary>Preciso passar a senha da minha loja?</summary>
+          <p>Sempre que a plataforma oferece, a conexão é feita pela autorização oficial, que você pode revogar quando quiser. Os detalhes estão na nossa <a href="privacidade.html">política de segurança e privacidade</a>.</p>
+        </details>
+        <details>
+          <summary>Quanto custa?</summary>
+          <p>Depende dos canais em que você vende e do tamanho da operação. Depois da conversa, o especialista monta uma proposta para a sua loja.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo aparece resultado?</summary>
+          <p>Sem olhar a loja, qualquer prazo seria chute. No diagnóstico, a gente mostra o que dá para corrigir primeiro e o que depende de tempo para responder.</p>
+        </details>
+        <details>
+          <summary>Em quais marketplaces vocês atuam?</summary>
+          <p>Shopee, Mercado Livre e TikTok Shop. Anúncios em redes sociais, como Meta, entram quando ajudam a vender nesses canais.</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <section class="secao" id="contato">
-    <div class="wrap contato">
-      <div>
-        <h2>Vamos olhar a sua loja</h2>
-        <p class="intro">Conte em qual marketplace você vende e o que está travando. A gente responde pelo Instagram ou por e-mail.</p>
-      </div>
-      <div class="canais">
-        <a class="canal" href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-          <span><small>Instagram</small><strong>@agency.gogh</strong></span>
-        </a>
-        <a class="canal" href="mailto:goghconsultoria@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-          <span><small>E-mail</small><strong>goghconsultoria@gmail.com</strong></span>
-        </a>
+  <section class="final" id="contato">
+    <div class="wrap">
+      <div class="painel-final">
+        <img src="assets/gogh-gg.png" alt="" width="84" height="84">
+        <h2>Vamos olhar a sua loja juntos</h2>
+        <p>Conte onde você vende e o que está travando. Um especialista da Gogh responde e mostra o próximo passo.</p>
+        <div class="acoes">
+          <a class="btn btn-ouro" href="https://ig.me/m/agency.gogh" target="_blank" rel="noopener noreferrer" data-especialista>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            Falar com especialista
+          </a>
+        </div>
+        <div class="contatos">
+          <a href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            @agency.gogh
+          </a>
+          <a href="mailto:goghconsultoria@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            goghconsultoria@gmail.com
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
 </main>
 
-<footer>
+<footer class="rodape">
   <div class="wrap">
-    <span>© 2026 Agency Gogh. Estratégia, gestão e resultados em marketplace.</span>
-    <a href="privacidade.html">Política de segurança e privacidade</a>
+    <img class="logo-completo" src="assets/logo-agency-gogh.webp" alt="Agency Gogh. Estratégia, gestão, resultados" width="132" height="132" loading="lazy">
+    <nav aria-label="Rodapé">
+      <a href="#servicos">O que fazemos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="privacidade.html">Política de segurança e privacidade</a>
+    </nav>
+    <small>© <span data-ano>2026</span> Agency Gogh. Shopee, Mercado Livre e TikTok são marcas de seus respectivos donos. A Gogh é uma agência independente e não representa essas plataformas.</small>
   </div>
 </footer>
 
+<div class="barra-celular">
+  <a class="btn btn-ouro" href="https://ig.me/m/agency.gogh" target="_blank" rel="noopener noreferrer" data-especialista>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+    Falar com especialista
+  </a>
+</div>
 </body>
 </html>
