@@ -62,3 +62,58 @@
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
   blocos.forEach(function(b){ olho.observe(b); });
 })();
+
+/* Abertura: a rolagem toca o filme e acende os capitulos.
+   O video nunca toca sozinho — quem manda no tempo dele e o scroll. */
+(function filmeDeAbertura(){
+  var secao = document.querySelector('.filme');
+  var video = document.querySelector('.filme-video');
+  var caps  = Array.prototype.slice.call(document.querySelectorAll('.filme-cap'));
+  if (!secao || !video || !caps.length) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    caps.forEach(function(c){ c.classList.add('aceso'); });
+    return;
+  }
+
+  var duracao = 0, alvo = 0, atual = 0, correndo = false;
+
+  function pegarDuracao(){
+    if (duracao) return;
+    duracao = video.duration || 0;
+    if (duracao) medir();
+  }
+  video.addEventListener('loadedmetadata', pegarDuracao);
+  video.addEventListener('durationchange', pegarDuracao);
+  video.addEventListener('canplay', pegarDuracao);
+  // o video pode ja estar pronto (cache): o evento nao dispara de novo
+  if (video.readyState >= 1) pegarDuracao(); else video.load();
+
+  function medir(){
+    if (!duracao) return;
+    var topo = secao.offsetTop;
+    var curso = secao.offsetHeight - window.innerHeight;          // quanto da para rolar dentro da secao
+    var andado = Math.min(Math.max((window.scrollY - topo) / Math.max(curso, 1), 0), 1);
+    alvo = andado * (duracao - 0.04);
+    if (andado > 0.02) secao.classList.add('andou');
+    if (!correndo) { correndo = true; requestAnimationFrame(seguir); }
+
+    // acende o capitulo que esta no meio da tela
+    var meio = window.innerHeight * 0.5;
+    caps.forEach(function(c){
+      var r = c.getBoundingClientRect();
+      if (r.top <= meio && r.bottom >= meio * 0.2) c.classList.add('aceso');
+    });
+  }
+
+  /* segue o alvo com suavidade: sem isso o filme "pula" a cada evento de rolagem */
+  function seguir(){
+    atual += (alvo - atual) * 0.15;
+    if (Math.abs(alvo - atual) < 0.004) { atual = alvo; correndo = false; }
+    if (video.readyState >= 1) { try { video.currentTime = atual; } catch (e) {} }
+    if (correndo) requestAnimationFrame(seguir);
+  }
+
+  addEventListener('scroll', medir, { passive: true });
+  addEventListener('resize', medir);
+  medir();
+})();

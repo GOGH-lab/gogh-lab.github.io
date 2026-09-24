@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css">
-<script src="assets/site.js" defer></script>
+<link rel="stylesheet" href="assets/site.css?v=135b48a1">
+<script src="assets/site.js?v=25655e6a" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -45,61 +45,67 @@
 
 <main id="conteudo">
 
-  <section class="abertura">
-    <div class="brilho-2" aria-hidden="true"></div>
-    <div class="wrap grade">
-      <div>
-        <h1>Sua loja revisada, <span class="dourado">anúncio por anúncio.</span></h1>
-        <p class="sub">A Gogh cuida da sua conta na Shopee, no Mercado Livre e no TikTok Shop: arruma o catálogo, protege a reputação, roda os anúncios pagos e produz o vídeo do produto.</p>
-        <div class="acoes">
-          <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
-            Falar com especialista
-          </a>
-          <a class="btn btn-fio" href="#como-funciona">Ver como funciona</a>
-        </div>
-        <ul class="promessas">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Operação, anúncios e conteúdo no mesmo time</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Toda recomendação chega com o número que a justifica</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Nada muda na sua loja sem a sua aprovação</li>
-        </ul>
-      </div>
-
-      <figure class="revisao">
-        <div class="ficha">
-          <div class="ficha-topo">
-            <strong>Anúncio em revisão</strong>
-            <span class="selo"><img src="assets/shopee-cor.svg" alt="" width="16" height="16">Shopee</span>
-          </div>
-          <div class="linha l1">
-            <div class="campo">Título</div>
-            <div class="valor">
-              <span class="riscado">tenis masculino kit promoçao top</span>
-              <span class="corrigido">Tênis casual masculino em couro, preto</span>
-            </div>
-            <p class="nota">o título precisa ter o que o comprador digita na busca</p>
-          </div>
-          <div class="linha l2">
-            <div class="campo">Categoria</div>
-            <div class="valor">
-              <span class="circulado">Outros<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="20" rx="48" ry="17" transform="rotate(-3 50 20)"/></svg></span>
-            </div>
-            <p class="nota">categoria errada limita o alcance do anúncio</p>
-          </div>
-          <div class="linha l3">
-            <div class="campo">Vídeo</div>
-            <div class="valor">
-              <span class="riscado">nenhum</span>
-              <span class="inserido"><b aria-hidden="true">+</b>vídeo do produto sendo usado</span>
-            </div>
-            <p class="nota">o comprador quer ver antes de comprar</p>
-          </div>
-        </div>
-        <figcaption class="legenda">Exemplo ilustrativo do que revisamos em cada anúncio.</figcaption>
-      </figure>
+  <!-- ============================================================
+       Abertura: o filme avanca conforme a pessoa rola e os capitulos
+       passam por cima. Sem audio. Quem pediu "reduzir movimento" no
+       sistema ve o quadro parado e os textos, sem animacao.
+       ============================================================ -->
+  <section class="filme" id="abertura">
+    <div class="filme-palco" aria-hidden="true">
+      <video class="filme-video" poster="assets/filme-poster.jpg" muted playsinline preload="auto" tabindex="-1">
+        <source src="assets/filme-720.mp4" type="video/mp4" media="(max-width:760px)">
+        <source src="assets/filme.mp4" type="video/mp4">
+      </video>
+      <div class="filme-veu"></div>
     </div>
-  </section>
 
+    <div class="filme-capitulos">
+      <article class="filme-cap aceso" data-lado="left">
+        <div class="filme-pino">
+          <div class="filme-copy">
+            <p class="olho">O problema quase nunca é o produto</p>
+            <h1 class="filme-titulo">Seu produto está pronto.<br>A sua loja, não.</h1>
+            <p class="filme-texto">Estoque parado, anúncio incompleto, verba gasta em clique que não vira venda. A plataforma pune em silêncio — e o vendedor só percebe quando a venda cai.</p>
+          </div>
+        </div>
+      </article>
+      <article class="filme-cap" data-lado="left">
+        <div class="filme-pino">
+          <div class="filme-copy">
+            <p class="olho">O que a Gogh faz</p>
+            <h2 class="filme-titulo">A gente abre a sua loja e revisa <em>anúncio por anúncio</em>.</h2>
+            <p class="filme-texto">Título, categoria, foto, preço, prazo de envio. Um por um, com o número da sua conta do lado de cada recomendação.</p>
+          </div>
+        </div>
+      </article>
+      <article class="filme-cap" data-lado="right">
+        <div class="filme-pino">
+          <div class="filme-copy">
+            <p class="olho">Um time só</p>
+            <h2 class="filme-titulo">Catálogo, operação, anúncios pagos e vídeo.</h2>
+            <p class="filme-texto">Você não precisa juntar três fornecedores que não conversam entre si. Na Shopee, no Mercado Livre e no TikTok Shop.</p>
+          </div>
+        </div>
+      </article>
+      <article class="filme-cap" data-lado="right">
+        <div class="filme-pino">
+          <div class="filme-copy">
+            <p class="olho">O combinado</p>
+            <h2 class="filme-titulo">Nada muda na sua loja<br>sem a sua aprovação.</h2>
+            <p class="filme-texto">Analisar e recomendar é o nosso trabalho. Mexer em preço, anúncio ou verba só acontece com o seu ok.</p>
+            <div class="filme-botoes">
+              <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+                Falar com especialista
+              </a>
+              <a class="btn btn-fio" href="#como-funciona">Ver como funciona</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="filme-dica" aria-hidden="true"><span></span>role para ver</div>
+  </section>
   <section class="canais" aria-label="Marketplaces em que atuamos">
     <div class="wrap">
       <p>Onde a Gogh atua</p>
