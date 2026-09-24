@@ -236,3 +236,52 @@ p{margin:0}
   html{scroll-behavior:auto}
   .btn,.topo,.barra-celular,.retrato img,.duvidas summary::after{transition:none}
 }
+
+/* ==========================================================================
+   v4 — o conteudo aparece conforme a pessoa rola
+   Usa scroll-driven animation nativa quando o navegador tem (Chrome, Edge);
+   quando nao tem, o site.js faz o mesmo com IntersectionObserver.
+   Quem pediu "sem animacao" no sistema nao ve nenhuma.
+   ========================================================================== */
+
+/* fio dourado no topo mostrando o quanto ja foi lido */
+.progresso{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;transform-origin:0 50%;
+  background:var(--ouro-grad);transform:scaleX(0)}
+@supports (animation-timeline:scroll()){
+  .progresso{animation:encher linear;animation-timeline:scroll(root block)}
+}
+@keyframes encher{to{transform:scaleX(1)}}
+
+/* bloco que sobe e aparece quando entra na tela */
+[data-surge]{opacity:0;transform:translateY(22px)}
+[data-surge].dentro{opacity:1;transform:none;
+  transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+/* escalonado: o segundo card entra um tico depois do primeiro */
+[data-surge].dentro:nth-child(2){transition-delay:.08s}
+[data-surge].dentro:nth-child(3){transition-delay:.16s}
+[data-surge].dentro:nth-child(4){transition-delay:.24s}
+
+@supports (animation-timeline:view()){
+  [data-surge]{animation:surgir linear both;animation-timeline:view();
+    animation-range:entry 5% cover 26%}
+  [data-surge].dentro{transition:none}
+}
+@keyframes surgir{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* a abertura cede lugar: some devagar enquanto a proxima secao sobe */
+@supports (animation-timeline:view()){
+  .ficha{animation:ceder linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+}
+@keyframes ceder{to{opacity:.25;transform:translateY(-26px) scale(.985)}}
+
+/* as etapas do "como funciona" se acendem uma a uma */
+@supports (animation-timeline:view()){
+  .etapas>li{animation:acender linear both;animation-timeline:view();animation-range:entry 10% cover 30%}
+}
+@keyframes acender{from{opacity:.35}to{opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  .progresso{display:none}
+  [data-surge],[data-surge].dentro,.ficha,.etapas>li{animation:none!important;opacity:1!important;transform:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}

@@ -37,3 +37,28 @@
   var ano = document.querySelector('[data-ano]');
   if (ano) ano.textContent = String(new Date().getFullYear());
 })();
+
+/* v4 — aparecer ao rolar.
+   Navegador com scroll-driven animation (Chrome/Edge novos) ja faz pelo CSS.
+   Aqui e o plano B, para Safari e Firefox: mesma aparencia, sem depender do CSS novo. */
+(function aparecerAoRolar(){
+  var blocos = document.querySelectorAll('[data-surge]');
+  if (!blocos.length) return;
+
+  var temNativo = CSS.supports && CSS.supports('animation-timeline', 'view()');
+  var querMenos = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (temNativo || querMenos) {
+    if (querMenos) blocos.forEach(function(b){ b.classList.add('dentro'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {           // navegador antigo: mostra tudo
+    blocos.forEach(function(b){ b.classList.add('dentro'); });
+    return;
+  }
+  var olho = new IntersectionObserver(function(itens){
+    itens.forEach(function(i){
+      if (i.isIntersecting){ i.target.classList.add('dentro'); olho.unobserve(i.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  blocos.forEach(function(b){ olho.observe(b); });
+})();
