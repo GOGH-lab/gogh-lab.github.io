@@ -21,8 +21,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=d75f62af">
+<link rel="stylesheet" href="assets/site.css?v=93b841aa">
 <script src="assets/site.js?v=471ddf48" defer></script>
+<link rel="stylesheet" href="assets/raiox.css?v=e8beb584">
+<link rel="stylesheet" href="assets/cinema.css?v=367e617c">
+<script src="assets/cinema.js?v=4ac0c72b" defer></script>
+<script src="assets/raiox.js?v=99864888" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -56,74 +60,26 @@
        nao a nossa marca. A marca assina no fim.
        Tudo em HTML/CSS: nitido em qualquer tela, sem video, sem peso.
        ============================================================ -->
-  <section class="abre" id="abertura">
-    <div class="abre-fixo">
+  <!-- ============================================================
+       O RAIO-X: a conta do lojista desenhada como um campo de pontos
+       de luz. Caos -> a lamina da Gogh varre -> o campo se organiza numa
+       curva que sobe. Canvas 2D com projecao propria: sem dependencia.
+       ============================================================ -->
+  <section class="raiox" id="abertura">
+    <div class="raiox-fixo">
+      <canvas class="campo" aria-hidden="true"></canvas>
+      <div class="grao" aria-hidden="true"></div>
 
-      <div class="vitrine" aria-hidden="true">
-        <div class="vitrine-luz"></div>
-        <div class="tela">
-          <div class="tela-topo">
-            <span class="tela-marca"></span>
-            <span class="tela-barra"></span>
-          </div>
-
-          <div class="tela-foto">
-            <img src="assets/abre-anuncio.jpg" alt="">
-            <div class="tela-cinza"></div>
-            <div class="tela-selo">9 fotos</div>
-          </div>
-
-          <div class="tela-titulo">
-            <span class="antes">chuteira futsal masculina barata kit</span>
-            <span class="depois">Chuteira Futsal Solado Antiderrapante 34 ao 43</span>
-          </div>
-
-          <div class="tela-linha">
-            <div class="tela-preco"><i>R$</i><b>129</b><u>,90</u></div>
-            <div class="tela-estrelas"><span></span><span></span><span></span><span></span><span></span></div>
-          </div>
-
-          <div class="tela-botao">Comprar agora</div>
-        </div>
-
-        <div class="venda">
-          <div class="venda-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          </div>
-          <div class="venda-txt"><b>Pedido novo</b><span>Chuteira Futsal · 41 · R$ 129,90</span></div>
-        </div>
+      <div class="tempos">
+        <p class="tempo t1" aria-hidden="true"><i>A SUA CONTA</i><i>JÁ VENDE.</i></p>
+        <p class="tempo t2" aria-hidden="true"><i>E MESMO ASSIM</i><i><em>não sobra.</em></i></p>
+        <p class="tempo t3"><i>A GENTE ACHA</i><i>ONDE <em>vaza.</em></i></p>
       </div>
 
-      <div class="abre-texto">
-        <h1 class="titulo-abre">
-          <span class="ln ln1"><i>O SEU PRODUTO</i></span>
-          <span class="ln ln2"><i>JÁ É BOM.</i></span>
-          <span class="ln ln3"><i>o anúncio é que não deixa ele vender</i></span>
-        </h1>
-        <p class="abre-sub">Shopee · Mercado Livre · TikTok Shop</p>
-      </div>
-
-      <div class="abre-lado">
-        <p class="abre-olho">O que a gente abre na sua conta</p>
-        <ul class="pecas">
-          <li class="peca">
-            <span class="peca-nome">Catálogo</span>
-            <span class="peca-nota">título, categoria, foto, variação</span>
-          </li>
-          <li class="peca">
-            <span class="peca-nome">Operação</span>
-            <span class="peca-nota">estoque, envio, reputação</span>
-          </li>
-          <li class="peca">
-            <span class="peca-nome">Anúncios pagos</span>
-            <span class="peca-nota">com meta de retorno combinada</span>
-          </li>
-          <li class="peca">
-            <span class="peca-nome">Vídeo e imagem</span>
-            <span class="peca-nota">o que faz o produto ser visto</span>
-          </li>
-        </ul>
-        <div class="abre-acoes">
+      <div class="fecho">
+        <h1>Conta por conta. <em>Número por número.</em></h1>
+        <p class="fecho-onde"><span>Shopee</span><b></b><span>Mercado Livre</span><b></b><span>TikTok Shop</span></p>
+        <div class="fecho-acoes">
           <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
             Falar com especialista
@@ -132,8 +88,7 @@
         </div>
       </div>
 
-      <div class="grao" aria-hidden="true"></div>
-      <div class="abre-dica" aria-hidden="true"><span></span>role</div>
+      <div class="raiox-dica" aria-hidden="true"><span></span>role</div>
     </div>
   </section>
 
@@ -148,111 +103,130 @@
     </div>
   </section>
 
-  <section class="secao" id="onde-trava">
-    <div class="wrap">
-      <div class="cabeca" data-surge>
-        <h2>Onde a venda costuma travar</h2>
-        <p>Muitas vezes o problema não é o produto. É um detalhe que a plataforma pune em silêncio, e o vendedor só percebe quando a venda cai.</p>
+  <!-- Onde a venda trava: quatro capitulos em tela cheia que se empilham.
+       Era uma grade de quatro cards -- o exemplo de "site que nao vende". -->
+  <section class="filme-travas" id="onde-trava">
+    <div class="travas-abre">
+      <div class="wrap">
+        <h2>Muitas vezes o problema<br><em>não é o seu produto.</em></h2>
+        <p>É um detalhe que a plataforma pune em silêncio — e o vendedor só percebe quando a venda cai.</p>
       </div>
-      <ul class="travas">
-        <li class="trava" data-surge>
+    </div>
+
+    <article class="cap">
+      <div class="cap-fixo">
+        <span class="cap-num" aria-hidden="true">01</span>
+        <div class="cap-texto">
+          <p class="cap-olho">a plataforma pune em silêncio</p>
           <h3>Envio fora do prazo</h3>
-          <p>Na Shopee, atraso recorrente vira ponto de penalidade. Com pontos acumulados, a loja perde campanhas e visibilidade.</p>
-        </li>
-        <li class="trava" data-surge>
-          <h3>Anúncio na categoria errada</h3>
-          <p>A plataforma limita o anúncio e ele deixa de aparecer na busca, mesmo com estoque e preço certos.</p>
-        </li>
-        <li class="trava" data-surge>
+          <p class="cap-corpo">Na Shopee, atraso recorrente vira ponto de penalidade. Com pontos acumulados, a loja perde campanhas e visibilidade.</p>
+        </div>
+      </div>
+    </article>
+    <article class="cap">
+      <div class="cap-fixo">
+        <span class="cap-num" aria-hidden="true">02</span>
+        <div class="cap-texto">
+          <p class="cap-olho">o produto existe e ninguém acha</p>
+          <h3>Categoria errada</h3>
+          <p class="cap-corpo">A plataforma limita o anúncio e ele deixa de aparecer na busca, mesmo com estoque e preço certos.</p>
+        </div>
+      </div>
+    </article>
+    <article class="cap">
+      <div class="cap-fixo">
+        <span class="cap-num" aria-hidden="true">03</span>
+        <div class="cap-texto">
+          <p class="cap-olho">você compete por uma busca que não existe</p>
           <h3>Título que ninguém procura</h3>
-          <p>Se o título não tem as palavras que o comprador digita, o produto não aparece para quem quer comprar.</p>
-        </li>
-
-
-        <li class="trava" data-surge>
+          <p class="cap-corpo">Se o título não tem as palavras que o comprador digita, o produto não aparece para quem quer comprar.</p>
+        </div>
+      </div>
+    </article>
+    <article class="cap">
+      <div class="cap-fixo">
+        <span class="cap-num" aria-hidden="true">04</span>
+        <div class="cap-texto">
+          <p class="cap-olho">sem vídeo, não existe vitrine</p>
           <h3>TikTok Shop sem vídeo</h3>
-          <p>No TikTok Shop, a venda nasce do vídeo. Sem conteúdo toda semana, o produto não chega em quem compra.</p>
-        </li>
-      </ul>
-      <div class="convite" data-surge>
+          <p class="cap-corpo">No TikTok Shop a venda nasce do vídeo. Sem conteúdo toda semana, o produto não chega em quem compra.</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="travas-fecha">
+      <div class="wrap">
         <p>Quer saber quais desses estão acontecendo na sua loja?</p>
         <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>Falar com especialista</a>
       </div>
     </div>
   </section>
 
-  <section class="secao escura" id="servicos">
+  <!-- O que a Gogh faz: quatro linhas tipograficas, sem icone e sem card.
+       Um fio de ouro corre sob cada uma quando ela entra na tela. -->
+  <section class="secao escura cinema" id="servicos">
     <div class="wrap">
-      <div class="cabeca" data-surge>
-        <h2>O que a Gogh faz na sua conta</h2>
-        <p>Um time que cuida da loja inteira, para você não precisar juntar três fornecedores diferentes.</p>
+      <div class="cabeca grande" data-surge>
+        <h2>A gente cuida da <em>loja inteira.</em></h2>
+        <p>Para você não precisar juntar três fornecedores diferentes.</p>
       </div>
-      <div class="servicos">
-        <article class="servico" data-surge>
-          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h10M7 16h6"/></svg></span>
+      <ul class="linhas">
+        <li class="linha" data-surge>
+          <span class="linha-n" aria-hidden="true">01</span>
           <h3>Catálogo</h3>
           <p>Cadastro e correção de anúncios em volume: título, categoria, atributos, fotos e variações. É o que coloca o produto na busca.</p>
-        </article>
-        <article class="servico" data-surge>
-          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        </li>
+        <li class="linha" data-surge>
+          <span class="linha-n" aria-hidden="true">02</span>
           <h3>Operação da conta</h3>
           <p>Prazo de envio, estoque, preço e reputação acompanhados toda semana, para a loja não tomar ponto de penalidade nem perder benefício da plataforma.</p>
-        </article>
-        <article class="servico" data-surge>
-          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        </li>
+        <li class="linha" data-surge>
+          <span class="linha-n" aria-hidden="true">03</span>
           <h3>Anúncios pagos</h3>
           <p>Shopee Ads, Mercado Livre Ads, TikTok e Meta, com meta de retorno combinada antes do primeiro real investido.</p>
-        </article>
-        <article class="servico" data-surge>
-          <span class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg></span>
+        </li>
+        <li class="linha" data-surge>
+          <span class="linha-n" aria-hidden="true">04</span>
           <h3>Vídeo e imagem</h3>
           <p>Conteúdo de produto para a página do anúncio e para o TikTok Shop. O que é feito com inteligência artificial vai identificado, como as plataformas exigem.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="secao" id="como-funciona">
-    <div class="wrap">
-      <div class="cabeca" data-surge>
-        <h2>Como funciona</h2>
-        <p>Primeiro a gente entende a sua loja. Só depois propõe o que fazer.</p>
-      </div>
-      <ol class="etapas">
-        <li data-surge>
-          <h3>Conversa</h3>
-          <p>Você conta onde vende, o que está travando e o que já tentou.</p>
         </li>
-        <li data-surge>
-          <h3>Diagnóstico</h3>
-          <p>Olhamos a saúde da conta, as vendas recentes, os anúncios limitados e o que recebe visita sem vender.</p>
-        </li>
-        <li data-surge>
-          <h3>Plano</h3>
-          <p>Você recebe o que fazer primeiro, em ordem de impacto, com o número que justifica cada item.</p>
-        </li>
-        <li data-surge>
-          <h3>Execução</h3>
-          <p>Colocamos o plano em prática e revisamos os resultados toda semana com você.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="secao escura" id="compromissos">
-    <div class="wrap">
-      <div class="cabeca" data-surge>
-        <h2>O que você pode cobrar da gente</h2>
-      </div>
-      <ul class="compromissos">
-        <li><strong>Nada muda sem a sua aprovação.</strong><span>Analisar e recomendar é o nosso trabalho. Mexer em preço, anúncio ou verba na sua loja só acontece com o seu ok.</span></li>
-        <li><strong>Toda recomendação tem número.</strong><span>Cada sugestão chega com o dado da sua conta que a sustenta. Palpite não entra na sua loja.</span></li>
-        <li><strong>Sem promessa de milagre.</strong><span>Se um resultado depende de tempo, de estoque ou da plataforma, a gente diz isso antes de você decidir.</span></li>
       </ul>
     </div>
   </section>
 
+  <!-- Como funciona: um fio de ouro que se desenha de cima a baixo,
+       na mesma linguagem de luz da abertura. -->
+  <section class="secao cinema" id="como-funciona">
+    <div class="wrap">
+      <div class="cabeca grande" data-surge>
+        <h2>Primeiro a gente entende.<br><em>Depois propõe.</em></h2>
+      </div>
+      <ol class="trilha">
+        <li data-surge><span class="marco" aria-hidden="true"></span>
+          <h3>Conversa</h3><p>Você conta onde vende, o que está travando e o que já tentou.</p></li>
+        <li data-surge><span class="marco" aria-hidden="true"></span>
+          <h3>Diagnóstico</h3><p>Olhamos a saúde da conta, as vendas recentes, os anúncios limitados e o que recebe visita sem vender.</p></li>
+        <li data-surge><span class="marco" aria-hidden="true"></span>
+          <h3>Plano</h3><p>Você recebe o que fazer primeiro, em ordem de impacto, com o número que justifica cada item.</p></li>
+        <li data-surge><span class="marco" aria-hidden="true"></span>
+          <h3>Execução</h3><p>Colocamos o plano em prática e revisamos os resultados toda semana com você.</p></li>
+      </ol>
+    </div>
+  </section>
 
+  <section class="secao escura cinema" id="compromissos">
+    <div class="wrap">
+      <div class="cabeca grande" data-surge>
+        <h2>O que você pode <em>cobrar da gente.</em></h2>
+      </div>
+      <ul class="promessas">
+        <li data-surge><strong>Nada muda sem a sua aprovação.</strong><span>Analisar e recomendar é o nosso trabalho. Mexer em preço, anúncio ou verba na sua loja só acontece com o seu ok.</span></li>
+        <li data-surge><strong>Toda recomendação tem número.</strong><span>Cada sugestão chega com o dado da sua conta que a sustenta. Palpite não entra na sua loja.</span></li>
+        <li data-surge><strong>Sem promessa de milagre.</strong><span>Se um resultado depende de tempo, de estoque ou da plataforma, a gente diz isso antes de você decidir.</span></li>
+      </ul>
+    </div>
+  </section>
 
   <section class="secao escura" id="duvidas">
     <div class="wrap duvidas-grade">
@@ -285,32 +259,22 @@
     </div>
   </section>
 
-  <section class="final" id="contato">
-    <div class="wrap">
-      <div class="painel-final">
-        <img src="assets/gogh-gg.png" alt="" width="84" height="84">
-        <h2>Vamos olhar a sua loja juntos</h2>
-        <p>Conte onde você vende e o que está travando. Um especialista da Gogh responde e mostra o próximo passo.</p>
-        <div class="acoes">
-          <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
-            Falar com especialista
-          </a>
-        </div>
-        <div class="contatos">
-          <a href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
-            (16) 99136-6741
-          </a>
-          <a href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            @agency.gogh
-          </a>
-          <a href="mailto:goghconsultoria@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            goghconsultoria@gmail.com
-          </a>
-        </div>
+  <!-- Fecho: o campo volta, calmo, e a chamada ocupa a tela.
+       Abre com o campo e fecha com o campo: o arco se completa. -->
+  <section class="final-filme" id="contato">
+    <canvas class="campo-fim" aria-hidden="true"></canvas>
+    <div class="fim-conteudo">
+      <h2>Vamos olhar a sua loja<br><em>juntos.</em></h2>
+      <p>Conte onde você vende e o que está travando. Um especialista da Gogh responde e mostra o próximo passo.</p>
+      <div class="acoes">
+        <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+          Falar com especialista
+        </a>
+      </div>
+      <div class="contatos">
+        <a href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer">(16) 99136-6741</a>
+        <a href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener noreferrer">@agency.gogh</a>
       </div>
     </div>
   </section>
