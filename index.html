@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=135b48a1">
-<script src="assets/site.js?v=25655e6a" defer></script>
+<link rel="stylesheet" href="assets/site.css?v=d75f62af">
+<script src="assets/site.js?v=471ddf48" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -46,66 +46,97 @@
 <main id="conteudo">
 
   <!-- ============================================================
-       Abertura: o filme avanca conforme a pessoa rola e os capitulos
-       passam por cima. Sem audio. Quem pediu "reduzir movimento" no
-       sistema ve o quadro parado e os textos, sem animacao.
+       Abertura: a marca se abre e mostra o que tem dentro.
+       O progresso da rolagem vira a variavel --p (0 a 1) e o CSS faz o resto.
+       Curta de proposito: acaba em pouco mais de uma tela de rolagem.
        ============================================================ -->
-  <section class="filme" id="abertura">
-    <div class="filme-palco" aria-hidden="true">
-      <video class="filme-video" poster="assets/filme-poster.jpg" muted playsinline preload="auto" tabindex="-1">
-        <source src="assets/filme-720.mp4" type="video/mp4" media="(max-width:760px)">
-        <source src="assets/filme.mp4" type="video/mp4">
-      </video>
-      <div class="filme-veu"></div>
-    </div>
+  <!-- ============================================================
+       Abertura: a loja ganha vida conforme a pessoa rola.
+       Heroi = o que o lojista quer ver (o anuncio pronto e a venda entrando),
+       nao a nossa marca. A marca assina no fim.
+       Tudo em HTML/CSS: nitido em qualquer tela, sem video, sem peso.
+       ============================================================ -->
+  <section class="abre" id="abertura">
+    <div class="abre-fixo">
 
-    <div class="filme-capitulos">
-      <article class="filme-cap aceso" data-lado="left">
-        <div class="filme-pino">
-          <div class="filme-copy">
-            <p class="olho">O problema quase nunca é o produto</p>
-            <h1 class="filme-titulo">Seu produto está pronto.<br>A sua loja, não.</h1>
-            <p class="filme-texto">Estoque parado, anúncio incompleto, verba gasta em clique que não vira venda. A plataforma pune em silêncio — e o vendedor só percebe quando a venda cai.</p>
+      <div class="vitrine" aria-hidden="true">
+        <div class="vitrine-luz"></div>
+        <div class="tela">
+          <div class="tela-topo">
+            <span class="tela-marca"></span>
+            <span class="tela-barra"></span>
           </div>
-        </div>
-      </article>
-      <article class="filme-cap" data-lado="left">
-        <div class="filme-pino">
-          <div class="filme-copy">
-            <p class="olho">O que a Gogh faz</p>
-            <h2 class="filme-titulo">A gente abre a sua loja e revisa <em>anúncio por anúncio</em>.</h2>
-            <p class="filme-texto">Título, categoria, foto, preço, prazo de envio. Um por um, com o número da sua conta do lado de cada recomendação.</p>
+
+          <div class="tela-foto">
+            <img src="assets/abre-anuncio.jpg" alt="">
+            <div class="tela-cinza"></div>
+            <div class="tela-selo">9 fotos</div>
           </div>
-        </div>
-      </article>
-      <article class="filme-cap" data-lado="right">
-        <div class="filme-pino">
-          <div class="filme-copy">
-            <p class="olho">Um time só</p>
-            <h2 class="filme-titulo">Catálogo, operação, anúncios pagos e vídeo.</h2>
-            <p class="filme-texto">Você não precisa juntar três fornecedores que não conversam entre si. Na Shopee, no Mercado Livre e no TikTok Shop.</p>
+
+          <div class="tela-titulo">
+            <span class="antes">chuteira futsal masculina barata kit</span>
+            <span class="depois">Chuteira Futsal Solado Antiderrapante 34 ao 43</span>
           </div>
-        </div>
-      </article>
-      <article class="filme-cap" data-lado="right">
-        <div class="filme-pino">
-          <div class="filme-copy">
-            <p class="olho">O combinado</p>
-            <h2 class="filme-titulo">Nada muda na sua loja<br>sem a sua aprovação.</h2>
-            <p class="filme-texto">Analisar e recomendar é o nosso trabalho. Mexer em preço, anúncio ou verba só acontece com o seu ok.</p>
-            <div class="filme-botoes">
-              <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
-                Falar com especialista
-              </a>
-              <a class="btn btn-fio" href="#como-funciona">Ver como funciona</a>
-            </div>
+
+          <div class="tela-linha">
+            <div class="tela-preco"><i>R$</i><b>129</b><u>,90</u></div>
+            <div class="tela-estrelas"><span></span><span></span><span></span><span></span><span></span></div>
           </div>
+
+          <div class="tela-botao">Comprar agora</div>
         </div>
-      </article>
+
+        <div class="venda">
+          <div class="venda-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div class="venda-txt"><b>Pedido novo</b><span>Chuteira Futsal · 41 · R$ 129,90</span></div>
+        </div>
+      </div>
+
+      <div class="abre-texto">
+        <h1 class="titulo-abre">
+          <span class="ln ln1"><i>O SEU PRODUTO</i></span>
+          <span class="ln ln2"><i>JÁ É BOM.</i></span>
+          <span class="ln ln3"><i>o anúncio é que não deixa ele vender</i></span>
+        </h1>
+        <p class="abre-sub">Shopee · Mercado Livre · TikTok Shop</p>
+      </div>
+
+      <div class="abre-lado">
+        <p class="abre-olho">O que a gente abre na sua conta</p>
+        <ul class="pecas">
+          <li class="peca">
+            <span class="peca-nome">Catálogo</span>
+            <span class="peca-nota">título, categoria, foto, variação</span>
+          </li>
+          <li class="peca">
+            <span class="peca-nome">Operação</span>
+            <span class="peca-nota">estoque, envio, reputação</span>
+          </li>
+          <li class="peca">
+            <span class="peca-nome">Anúncios pagos</span>
+            <span class="peca-nota">com meta de retorno combinada</span>
+          </li>
+          <li class="peca">
+            <span class="peca-nome">Vídeo e imagem</span>
+            <span class="peca-nota">o que faz o produto ser visto</span>
+          </li>
+        </ul>
+        <div class="abre-acoes">
+          <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            Falar com especialista
+          </a>
+          <a class="btn btn-fio" href="#como-funciona">Ver como funciona</a>
+        </div>
+      </div>
+
+      <div class="grao" aria-hidden="true"></div>
+      <div class="abre-dica" aria-hidden="true"><span></span>role</div>
     </div>
-    <div class="filme-dica" aria-hidden="true"><span></span>role para ver</div>
   </section>
+
   <section class="canais" aria-label="Marketplaces em que atuamos">
     <div class="wrap">
       <p>Onde a Gogh atua</p>
