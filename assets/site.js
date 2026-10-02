@@ -17,8 +17,8 @@
 
   var topo = document.querySelector('.topo');
   var barra = document.querySelector('.barra-celular');
-  var abertura = document.querySelector('.abertura');
-  var final = document.querySelector('.final');
+  var abertura = document.querySelector('#abertura');
+  var final = document.querySelector('#contato');
 
   function aoRolar() {
     if (topo) topo.classList.toggle('rolou', window.scrollY > 12);

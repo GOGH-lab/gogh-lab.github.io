@@ -1,0 +1,131 @@
+/* ============================================================================
+   v9 — mostrar em vez de contar.
+   1) O sistema em acao: o filme de 53 s como protagonista, de borda a borda.
+   2) Contato: dois caminhos, os dois abrindo o WhatsApp com a mensagem pronta.
+   ========================================================================== */
+
+/* ---------- Cormorant corrigida ----------
+   A Cormorant do Google desenha o circunflexo das minusculas torto ("você", "lê").
+   Esta e a mesma fonte, nos pesos 500 e 600, com o acento consertado (02/10/2026).
+   Vem depois do CSS do Google, entao vence para os caracteres latinos; italico e
+   o resto continuam vindo do Google. */
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;
+  src:url("fonts/cormorant-gogh-500.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;
+  src:url("fonts/cormorant-gogh-600.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ---------- o sistema em acao ---------- */
+.sistema{position:relative;background:#030303;border-top:1px solid rgba(199,154,90,.14);
+  padding:clamp(4rem,11vh,7.5rem) 0 clamp(3.5rem,9vh,6rem)}
+.sistema-cabeca{text-align:center;margin-bottom:clamp(1.8rem,5vh,3.2rem)}
+.sistema-olho{font-size:clamp(9.5px,1.05vw,11px);letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ouro);font-weight:600;margin-bottom:clamp(.8rem,2vh,1.3rem)}
+.sistema-cabeca h2{font-family:var(--serif);font-weight:500;color:var(--creme);letter-spacing:-.025em;
+  font-size:clamp(32px,5.6vw,76px);line-height:.98}
+.sistema-cabeca h2 em{font-style:italic;color:var(--ouro-claro)}
+
+/* a tela: largura cheia, mas nunca mais alta que a janela */
+.tela-caixa{position:relative;margin:0 auto;width:min(100%,calc((100dvh - 7rem) * 16 / 9))}
+.tela{position:relative;width:100%;
+  aspect-ratio:16/9;background:#030303;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(199,154,90,.18),0 40px 120px -40px rgba(199,154,90,.28)}
+.tela-video{display:block;width:100%;height:100%;object-fit:cover;background:#030303;cursor:pointer}
+
+/* controles: redondos, escuros, sempre do tamanho do dedo */
+.tela-controles{position:absolute;right:clamp(10px,1.6vw,22px);bottom:clamp(10px,1.6vw,22px);
+  display:flex;gap:8px;z-index:3}
+.tela-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;
+  border:1px solid rgba(199,154,90,.45);background:rgba(3,3,3,.72);color:var(--creme);
+  font:600 13px/1 var(--sans);letter-spacing:.02em;cursor:pointer;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .2s ease,background-color .2s ease}
+.tela-btn:hover{border-color:var(--ouro-claro)}
+.tela-btn svg{width:18px;height:18px;flex:none}
+.tela-btn.so-icone{width:44px;padding:0;justify-content:center}
+.tela-btn[aria-pressed="true"]{background:rgba(199,154,90,.22)}
+
+/* play grande: aparece quando o filme nao comecou sozinho, ou esta pausado */
+.tela-play{position:absolute;inset:0;z-index:2;display:grid;place-items:center;border:0;padding:0;
+  background:radial-gradient(60% 60% at 50% 50%,rgba(3,3,3,.15),rgba(3,3,3,.55));cursor:pointer;color:var(--creme)}
+.tela-play span{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 26px;border-radius:999px;
+  background:var(--ouro-grad);color:#140F07;font:600 15px/1 var(--sans);
+  box-shadow:0 10px 30px -12px rgba(199,154,90,.55)}
+.tela-play svg{width:18px;height:18px}
+.tela-play[hidden]{display:none}
+
+/* fim do filme: o convite vira botao */
+.tela-fim{position:absolute;left:0;right:0;bottom:clamp(14px,4%,40px);z-index:3;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0 16px;
+  animation:fimEntra .6s ease both}
+.tela-fim[hidden]{display:none}
+@keyframes fimEntra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.tela-caixa.acabou .tela-controles{display:none}
+/* tela cheia da moldura (computador e Android): o filme cabe inteiro, os botoes continuam */
+.tela:fullscreen{width:100%;height:100%;aspect-ratio:auto;box-shadow:none}
+.tela:fullscreen .tela-video{object-fit:contain}
+.tela:-webkit-full-screen{width:100%;height:100%;aspect-ratio:auto;box-shadow:none}
+.tela:-webkit-full-screen .tela-video{object-fit:contain}
+
+.sistema-nota{margin-top:clamp(1rem,2.4vh,1.5rem);text-align:center;color:var(--creme-2);
+  font-size:13px;letter-spacing:.04em}
+
+/* celular: o filme encosta nas bordas e o fim sai de cima do video */
+@media (max-width:719px){
+  .tela-caixa{width:100%}
+  .tela-btn .rotulo{display:none}
+  .tela-btn{width:44px;padding:0;justify-content:center}
+  .tela-controles{right:8px;bottom:8px}
+  .tela-play span{min-height:48px;padding:0 20px;font-size:14px}
+  .tela-fim{position:static;padding:16px 20px 0;animation:none}
+  .tela-fim .btn{flex:1 1 100%}
+}
+
+/* ---------- contato: os dois caminhos ---------- */
+.final-filme .fim-conteudo{width:100%;max-width:36rem}
+.pedido{width:100%;text-align:left;display:flex;flex-direction:column;gap:1.15rem}
+.pedido label,.pedido legend{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ouro);margin-bottom:.5rem;padding:0}
+.pedido legend small,.pedido label small{letter-spacing:.04em;text-transform:none;color:var(--creme-2);font-weight:500}
+.pedido fieldset{border:0;margin:0;padding:0;min-width:0}
+.pedido input[type="text"]{width:100%;min-height:52px;padding:0 16px;border-radius:12px;
+  border:1px solid rgba(199,154,90,.32);background:rgba(11,10,8,.88);color:var(--creme);
+  font:500 16px/1.2 var(--sans);transition:border-color .2s ease}
+.pedido input[type="text"]::placeholder{color:#6f685d}
+.pedido input[type="text"]:focus{outline:none;border-color:var(--ouro-claro);box-shadow:0 0 0 3px rgba(199,154,90,.18)}
+.pedido [aria-invalid="true"]{border-color:#d9826a !important}
+
+/* opcoes como fichas: checkbox/radio de verdade, escondido so no visual */
+.fichas{display:flex;flex-wrap:wrap;gap:8px}
+.pedido .ficha{position:relative;display:inline-block;margin:0;padding:0;text-transform:none;letter-spacing:0;font-weight:500}
+.ficha input{position:absolute;opacity:0;width:1px;height:1px}
+.ficha span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;
+  border:1px solid rgba(199,154,90,.32);background:rgba(11,10,8,.88);color:var(--creme);
+  font:500 14.5px/1.2 var(--sans);cursor:pointer;user-select:none;transition:all .18s ease}
+.ficha span:hover{border-color:var(--ouro)}
+.ficha input:checked+span{background:var(--ouro-grad);color:#140F07;border-color:transparent;font-weight:600}
+.ficha input:focus-visible+span{outline:2px solid var(--ouro-claro);outline-offset:3px}
+.fichas.invalido .ficha span{border-color:#d9826a}
+
+.pedido-erro{min-height:1.2em;font-size:13.5px;color:#e9a08c;margin:-.4rem 0 0}
+/* vazio continua no lugar (o leitor de tela anuncia quando o aviso entra), so nao ocupa espaco */
+.pedido-erro:empty{min-height:0;margin:0 0 -1.15rem}
+.pedido .btn{width:100%;margin-top:.2rem}
+
+/* o completo abre por baixo do curto */
+.completo{width:100%;margin-top:.4rem;border-top:1px solid rgba(199,154,90,.22);padding-top:1.1rem}
+.completo>summary{list-style:none;cursor:pointer;color:var(--creme);font-family:var(--serif);
+  font-size:clamp(21px,2.6vw,27px);line-height:1.25;display:block;text-align:center;padding:.3rem 0;text-wrap:balance}
+.completo>summary::-webkit-details-marker{display:none}
+.completo>summary em{font-style:italic;color:var(--ouro-claro)}
+.completo>summary::after{content:"";display:inline-block;vertical-align:middle;margin-left:12px;width:9px;height:9px;border-right:1.5px solid var(--ouro);
+  border-bottom:1.5px solid var(--ouro);transform:rotate(45deg) translateY(-3px);transition:transform .25s ease}
+.completo[open]>summary::after{transform:rotate(-135deg) translate(-2px,-1px)}
+.completo .pedido{margin-top:1.4rem}
+
+.pedido-nota{font-size:13px;color:var(--creme-2);max-width:42ch;line-height:1.55}
+
+@media (prefers-reduced-motion:reduce){
+  .tela-fim{animation:none}
+  .ficha span,.completo>summary::after{transition:none}
+}

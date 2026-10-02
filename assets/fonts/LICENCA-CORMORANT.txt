@@ -1,0 +1,10 @@
+Cormorant Garamond — cormorant-gogh-500.woff2 e cormorant-gogh-600.woff2
+
+Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is available with a FAQ at: https://openfontlicense.org
+
+Versão modificada pela Agency Gogh em 02/10/2026: instâncias estáticas dos pesos 500 e 600,
+com o circunflexo das minúsculas (â ê î ô û) redesenhado a partir do circunflexo das maiúsculas
+da própria fonte. Nenhum outro desenho foi alterado.

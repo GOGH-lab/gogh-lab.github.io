@@ -169,12 +169,25 @@
     }
   }
 
+  /* os botoes do fecho so aceitam clique e foco quando ja aparecem: antes disso sao invisiveis
+     e um toque na parte de baixo da tela abria o WhatsApp sem a pessoa ver o botao */
+  var acoes = secao.querySelector('.fecho-acoes');
+  var vivos = null;
+  function botoesVivos(v) {
+    var agora = v >= 0.86;
+    if (agora === vivos || !acoes) return;
+    vivos = agora;
+    acoes.inert = !agora;
+    secao.classList.toggle('fim', agora);
+  }
+
   var rodando = false;
   function quadro() {
     p += (alvo - p) * 0.12;
     mxs += (mx - mxs) * 0.06;
     mys += (my - mys) * 0.06;
     secao.style.setProperty('--p', p.toFixed(4));
+    botoesVivos(p);
     desenhar();
     if (Math.abs(alvo - p) > 0.0004 || Math.abs(mx - mxs) > 0.002 || !reduz) {
       requestAnimationFrame(quadro);
@@ -183,7 +196,7 @@
 
   medir();
   if (reduz) {                       /* quem pediu menos movimento ve o quadro final */
-    p = alvo = 1; secao.style.setProperty('--p', 1); desenhar();
+    p = alvo = 1; secao.style.setProperty('--p', 1); botoesVivos(1); desenhar();
   } else {
     lerProgresso(); p = alvo;
     rodando = true; requestAnimationFrame(quadro);

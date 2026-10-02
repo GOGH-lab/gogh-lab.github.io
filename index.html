@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Agency Gogh | Gestão de Shopee, Mercado Livre e TikTok Shop</title>
 <meta name="description" content="A Gogh cuida da sua loja na Shopee, no Mercado Livre e no TikTok Shop: catálogo, reputação, anúncios pagos e vídeo de produto. Fale com um especialista.">
@@ -22,11 +22,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css?v=93b841aa">
-<script src="assets/site.js?v=471ddf48" defer></script>
-<link rel="stylesheet" href="assets/raiox.css?v=e8beb584">
+<script src="assets/site.js?v=39750450" defer></script>
+<link rel="stylesheet" href="assets/raiox.css?v=e9aa33d4">
 <link rel="stylesheet" href="assets/cinema.css?v=367e617c">
 <script src="assets/cinema.js?v=4ac0c72b" defer></script>
-<script src="assets/raiox.js?v=99864888" defer></script>
+<script src="assets/raiox.js?v=b8f244f4" defer></script>
+<link rel="stylesheet" href="assets/sistema.css?v=5088d347">
+<script src="assets/sistema.js?v=81cba288" defer></script>
 </head>
 <body>
 <div class="progresso" aria-hidden="true"></div>
@@ -39,6 +41,7 @@
       <span>Agency Gogh</span>
     </a>
     <nav aria-label="Principal">
+      <a href="#sistema-em-acao">O sistema</a>
       <a href="#servicos">O que fazemos</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#duvidas">Dúvidas</a>
@@ -84,7 +87,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
             Falar com especialista
           </a>
-          <a class="btn btn-fio" href="#como-funciona">Ver como funciona</a>
+          <a class="btn btn-fio" href="#sistema-em-acao">Ver o sistema em ação</a>
         </div>
       </div>
 
@@ -160,6 +163,47 @@
         <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>Falar com especialista</a>
       </div>
     </div>
+  </section>
+
+  <!-- O sistema em acao: em vez de contar, mostrar. O filme e o protagonista.
+       Comeca sem som quando chega na tela; a pessoa liga o som se quiser. -->
+  <section class="sistema" id="sistema-em-acao" aria-labelledby="sistema-titulo">
+    <div class="wrap sistema-cabeca">
+      <p class="sistema-olho">o sistema em ação</p>
+      <h2 id="sistema-titulo">Em vez de contar, <em>a gente mostra.</em></h2>
+    </div>
+
+    <div class="tela-caixa">
+      <div class="tela">
+        <video class="tela-video" muted playsinline preload="metadata" poster="assets/sistema-em-acao.jpg?v=c0f841cb" width="1920" height="1080"
+          aria-label="Filme de 53 segundos: o sistema da Gogh lê uma loja de exemplo, acha três furos, prepara a correção e só aplica com aprovação.">
+          <source src="assets/sistema-em-acao.mp4?v=033c54b9" type="video/mp4">
+        </video>
+        <button class="tela-play" type="button" hidden aria-label="Assistir ao filme com som">
+          <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Assistir · 53 s</span>
+        </button>
+        <div class="tela-controles">
+          <button class="tela-btn so-icone" type="button" data-pausa aria-label="Pausar o filme">
+            <span class="ic-pausa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></span>
+            <span class="ic-segue" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+          </button>
+          <button class="tela-btn" type="button" data-som aria-pressed="false" aria-label="Ligar o som">
+            <span class="ic-mudo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg></span>
+            <span class="ic-som" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>
+            <span class="rotulo">Ligar o som</span>
+          </button>
+          <button class="tela-btn so-icone" type="button" data-cheia aria-label="Ver em tela cheia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="tela-fim" hidden>
+        <a class="btn btn-ouro" href="#contato">Quero um diagnóstico</a>
+        <button class="btn btn-fio" type="button" data-de-novo>Ver de novo</button>
+      </div>
+    </div>
+
+    <p class="wrap sistema-nota">Loja de exemplo, dados fictícios. Nenhum número de cliente aparece no filme.</p>
   </section>
 
   <!-- O que a Gogh faz: quatro linhas tipograficas, sem icone e sem card.
@@ -265,15 +309,98 @@
     <canvas class="campo-fim" aria-hidden="true"></canvas>
     <div class="fim-conteudo">
       <h2>Vamos olhar a sua loja<br><em>juntos.</em></h2>
-      <p>Conte onde você vende e o que está travando. Um especialista da Gogh responde e mostra o próximo passo.</p>
-      <div class="acoes">
-        <a class="btn btn-ouro" href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>
+      <p>Diga seu nome e onde vende. A mensagem abre pronta no seu WhatsApp, e um especialista da Gogh responde por lá.</p>
+
+      <!-- a) curto: um clique e ja manda -->
+      <form class="pedido" id="form-diagnostico" novalidate>
+        <div>
+          <label for="d-nome">Seu nome</label>
+          <input type="text" id="d-nome" name="nome" autocomplete="name" maxlength="80" required>
+        </div>
+        <fieldset>
+          <legend>Onde você vende <small>marque quantos quiser</small></legend>
+          <div class="fichas" data-campo="onde">
+            <label class="ficha"><input type="checkbox" name="onde" value="Shopee"><span>Shopee</span></label>
+            <label class="ficha"><input type="checkbox" name="onde" value="Mercado Livre"><span>Mercado Livre</span></label>
+            <label class="ficha"><input type="checkbox" name="onde" value="TikTok Shop"><span>TikTok Shop</span></label>
+          </div>
+        </fieldset>
+        <p class="pedido-erro" role="alert"></p>
+        <button class="btn btn-ouro" type="submit">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
-          Falar com especialista
-        </a>
-      </div>
+          Quero um diagnóstico
+        </button>
+      </form>
+
+      <!-- b) completo: para quem ja quer contratar -->
+      <details class="completo" id="contratar">
+        <summary>Já quer contratar? <em>Preencha o completo.</em></summary>
+        <form class="pedido" id="form-contratar" novalidate>
+          <div>
+            <label for="c-nome">Seu nome</label>
+            <input type="text" id="c-nome" name="nome" autocomplete="name" maxlength="80" required>
+          </div>
+          <div>
+            <label for="c-loja">Nome da loja ou empresa</label>
+            <input type="text" id="c-loja" name="loja" autocomplete="organization" maxlength="100" required>
+          </div>
+          <div>
+            <label for="c-ramo">O que você vende</label>
+            <input type="text" id="c-ramo" name="ramo" maxlength="120" placeholder="ex.: utilidades domésticas" required>
+          </div>
+          <fieldset>
+            <legend>Onde vende hoje <small>marque quantos quiser</small></legend>
+            <div class="fichas" data-campo="onde" data-exclusivo="Ainda não vendo">
+              <label class="ficha"><input type="checkbox" name="onde" value="Shopee"><span>Shopee</span></label>
+              <label class="ficha"><input type="checkbox" name="onde" value="Mercado Livre"><span>Mercado Livre</span></label>
+              <label class="ficha"><input type="checkbox" name="onde" value="TikTok Shop"><span>TikTok Shop</span></label>
+              <label class="ficha"><input type="checkbox" name="onde" value="Ainda não vendo"><span>Ainda não vendo</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Faturamento por mês</legend>
+            <div class="fichas" data-campo="faturamento">
+              <label class="ficha"><input type="radio" name="faturamento" value="Até R$ 10 mil"><span>Até R$ 10 mil</span></label>
+              <label class="ficha"><input type="radio" name="faturamento" value="R$ 10 mil a R$ 50 mil"><span>R$ 10 mil a R$ 50 mil</span></label>
+              <label class="ficha"><input type="radio" name="faturamento" value="R$ 50 mil a R$ 200 mil"><span>R$ 50 mil a R$ 200 mil</span></label>
+              <label class="ficha"><input type="radio" name="faturamento" value="Acima de R$ 200 mil"><span>Acima de R$ 200 mil</span></label>
+              <label class="ficha"><input type="radio" name="faturamento" value="Ainda não vendo"><span>Ainda não vendo</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Onde quer o nosso serviço <small>marque quantos quiser</small></legend>
+            <div class="fichas" data-campo="servico-onde">
+              <label class="ficha"><input type="checkbox" name="servico-onde" value="Shopee"><span>Shopee</span></label>
+              <label class="ficha"><input type="checkbox" name="servico-onde" value="Mercado Livre"><span>Mercado Livre</span></label>
+              <label class="ficha"><input type="checkbox" name="servico-onde" value="TikTok Shop"><span>TikTok Shop</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>O que você precisa <small>marque quantos quiser</small></legend>
+            <div class="fichas" data-campo="precisa" data-exclusivo="Ainda não sei">
+              <label class="ficha"><input type="checkbox" name="precisa" value="Catálogo"><span>Catálogo</span></label>
+              <label class="ficha"><input type="checkbox" name="precisa" value="Operação da conta"><span>Operação da conta</span></label>
+              <label class="ficha"><input type="checkbox" name="precisa" value="Anúncios pagos"><span>Anúncios pagos</span></label>
+              <label class="ficha"><input type="checkbox" name="precisa" value="Vídeo e imagem"><span>Vídeo e imagem</span></label>
+              <label class="ficha"><input type="checkbox" name="precisa" value="Ainda não sei"><span>Ainda não sei</span></label>
+            </div>
+          </fieldset>
+          <div>
+            <label for="c-link">Instagram ou site da loja <small>(opcional)</small></label>
+            <input type="text" id="c-link" name="link" maxlength="120" placeholder="@sualoja ou sualoja.com.br" autocapitalize="off" spellcheck="false">
+          </div>
+          <p class="pedido-erro" role="alert"></p>
+          <button class="btn btn-ouro" type="submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            Mandar pelo WhatsApp
+          </button>
+        </form>
+      </details>
+
+      <p class="pedido-nota">Nada do que você escreve fica guardado no site. A mensagem abre pronta no seu WhatsApp e você confere antes de enviar.</p>
+
       <div class="contatos">
-        <a href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer">(16) 99136-6741</a>
+        <a href="https://wa.me/5516991366741?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Gogh%20e%20quero%20falar%20com%20um%20especialista%20sobre%20a%20minha%20loja." target="_blank" rel="noopener noreferrer" data-especialista>Só quer conversar? (16) 99136-6741</a>
         <a href="https://www.instagram.com/agency.gogh/" target="_blank" rel="noopener noreferrer">@agency.gogh</a>
       </div>
     </div>
