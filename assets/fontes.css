@@ -1,0 +1,7 @@
+/* Fontes servidas pelo proprio site (06/10/2026): nada vem mais do Google Fonts.
+   Arquivos latinos tirados do Google Fonts (licenca SIL OFL 1.1, livre para uso comercial).
+   Cormorant normal 500/600 vem de fonts/cormorant-gogh-*.woff2 (acento consertado), em sistema.css. */
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;
+  src:url("fonts/cormorant-italic-latin.woff2") format("woff2")}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 600;font-display:swap;
+  src:url("fonts/montserrat-latin.woff2") format("woff2")}

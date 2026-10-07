@@ -8,3 +8,6 @@ This license is available with a FAQ at: https://openfontlicense.org
 Versão modificada pela Agency Gogh em 02/10/2026: instâncias estáticas dos pesos 500 e 600,
 com o circunflexo das minúsculas (â ê î ô û) redesenhado a partir do circunflexo das maiúsculas
 da própria fonte. Nenhum outro desenho foi alterado.
+
+Montserrat (fonts/montserrat-latin.woff2) e Cormorant Garamond italico (fonts/cormorant-italic-latin.woff2):
+baixados do Google Fonts em 06/10/2026. Licenca SIL Open Font License 1.1 (scripts.sil.org/OFL).
