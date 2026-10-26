@@ -1,23 +1,60 @@
 /* Agency Gogh — comportamento do site. Sem coleta de dados, sem biblioteca externa. */
 (function () {
   // Números comerciais do WhatsApp, só dígitos com DDI e DDD (ex.: "5534999999999").
-  // Cada visita sorteia um, e todos os botões da página vão para ele: os contatos se dividem meio a meio.
-  // Os dois aparecem por extenso na chamada final ("Só quer conversar?").
-  // Vazio: os botões "Falar com especialista" abrem o Direct do Instagram.
-  var WHATSAPPS = ['5516993947715', '5516993129924'];
-  var WHATSAPP = WHATSAPPS[Math.floor(Math.random() * WHATSAPPS.length)] || '';
-  document.documentElement.setAttribute('data-whatsapp', WHATSAPP);
+  // Todo botão de contato abre uma escolha com os dois: a pessoa decide com quem falar.
+  // Sem JavaScript, os links do HTML vão direto para o primeiro.
+  var WHATSAPPS = [
+    { numero: '5516993947715', rotulo: '(16) 99394-7715' },
+    { numero: '5516993129924', rotulo: '(16) 99312-9924' }
+  ];
   var MENSAGEM = 'Olá! Vim pelo site da Gogh e quero falar com um especialista sobre a minha loja.';
 
-  if (/^\d{12,13}$/.test(WHATSAPP)) {
-    var destino = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(MENSAGEM);
-    document.querySelectorAll('[data-especialista]').forEach(function (a) {
-      a.setAttribute('href', destino);
+  var escolha = document.createElement('dialog');
+  escolha.className = 'escolha-whats';
+  escolha.setAttribute('aria-labelledby', 'escolha-whats-titulo');
+  escolha.innerHTML =
+    '<button type="button" class="escolha-fechar" aria-label="Fechar">×</button>' +
+    '<p class="escolha-selo">WhatsApp</p>' +
+    '<h2 id="escolha-whats-titulo">Fale com um especialista</h2>' +
+    '<p class="escolha-texto">Os dois atendem. Escolha um número.</p>' +
+    '<div class="escolha-numeros"></div>';
+  var lista = escolha.querySelector('.escolha-numeros');
+  var links = WHATSAPPS.map(function (w) {
+    var a = document.createElement('a');
+    a.className = 'btn btn-ouro';
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = 'WhatsApp ' + w.rotulo;
+    a.addEventListener('click', function () { escolha.close(); });
+    lista.appendChild(a);
+    return { a: a, numero: w.numero };
+  });
+  document.body.appendChild(escolha);
+  escolha.querySelector('.escolha-fechar').addEventListener('click', function () { escolha.close(); });
+  escolha.addEventListener('click', function (e) {  // clique fora do quadro fecha; dentro, mesmo errando o botão, não
+    if (e.target !== escolha) return;
+    var r = escolha.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) escolha.close();
+  });
+
+  // abre a escolha já com o texto que vai na conversa (o formulário de diagnóstico manda o dele)
+  window.goghEscolheWhatsApp = function (texto) {
+    links.forEach(function (l) {
+      l.a.href = 'https://wa.me/' + l.numero + '?text=' + encodeURIComponent(texto || MENSAGEM);
     });
-    document.querySelectorAll('[data-canal-texto]').forEach(function (s) {
-      s.textContent = 'WhatsApp';
+    if (typeof escolha.showModal === 'function') escolha.showModal();
+    else location.href = links[0].a.href;          // navegador sem <dialog>: vai para o primeiro
+  };
+
+  document.querySelectorAll('[data-especialista]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.goghEscolheWhatsApp(MENSAGEM);
     });
-  }
+  });
+  document.querySelectorAll('[data-canal-texto]').forEach(function (s) {
+    s.textContent = 'WhatsApp';
+  });
 
   var topo = document.querySelector('.topo');
   var barra = document.querySelector('.barra-celular');

@@ -126,8 +126,7 @@
 
 /* ---------- contato: os dois caminhos caem no WhatsApp ---------- */
 (function contato(){
-  // o mesmo número que o site.js sorteou para os botões desta visita
-  var WHATSAPP = document.documentElement.getAttribute('data-whatsapp') || '5516993947715';
+  var WHATSAPP = '5516993947715';   // só se a escolha do site.js não carregar
 
   // texto da pessoa: uma linha so, sem espaco sobrando, com limite
   function limpa(s, max){
@@ -143,6 +142,7 @@
   }
 
   function abreWhatsApp(texto){
+    if (window.goghEscolheWhatsApp) return window.goghEscolheWhatsApp(texto);   // a pessoa escolhe o número
     var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
     var w = window.open(url, '_blank');
     if (w) { try { w.opener = null; } catch (e) {} }

@@ -41,7 +41,7 @@ p{margin:0}
 
 /* ---------- topo ---------- */
 .topo{position:fixed;inset:0 0 auto 0;z-index:50;transition:background-color .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
-.topo.rolou{background:rgba(3,3,3,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--fio-claro)}
+.topo.rolou{background:rgba(3,3,3,.82);backdrop-filter:blur(14px);:blur(14px);border-color:var(--fio-claro)}
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
 .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
 .marca img{width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 1px var(--fio)}
@@ -232,8 +232,23 @@ p{margin:0}
 .barra-celular .btn{width:100%;box-shadow:0 16px 40px -10px rgba(0,0,0,.8),0 10px 30px -12px rgba(199,154,90,.55)}
 @media(min-width:980px){.barra-celular{display:none}}
 
+/* escolha do WhatsApp: os dois números */
+.escolha-whats{box-sizing:border-box;width:min(420px,calc(100vw - 32px));max-width:calc(100vw - 32px);padding:34px 26px 26px;border:1px solid var(--fio);border-radius:var(--raio);background:var(--painel);color:var(--creme);text-align:center;box-shadow:0 30px 80px -20px rgba(0,0,0,.9)}
+.escolha-whats::backdrop{background:rgba(3,3,3,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.escolha-whats[open]{animation:escolha-entra .22s ease-out}
+@keyframes escolha-entra{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.escolha-selo{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro)}
+.escolha-whats h2{margin-top:8px;font-size:30px;line-height:1.15}
+.escolha-texto{margin-top:8px;font-size:14.5px;color:var(--creme-2)}
+.escolha-numeros{margin-top:22px;display:grid;gap:12px}
+.escolha-numeros .btn{width:100%}
+@media (max-width:360px){.escolha-whats{padding:34px 16px 18px}.escolha-numeros .btn{padding-inline:12px;white-space:normal}}
+.escolha-fechar{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;border-radius:50%;background:none;color:var(--creme-2);font-size:26px;line-height:1;cursor:pointer}
+.escolha-fechar:hover{color:var(--creme);background:var(--fio-claro)}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
+  .escolha-whats[open]{animation:none}
   .btn,.topo,.barra-celular,.retrato img,.duvidas summary::after{transition:none}
 }
 
