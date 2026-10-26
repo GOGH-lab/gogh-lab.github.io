@@ -1,8 +1,12 @@
 /* Agency Gogh — comportamento do site. Sem coleta de dados, sem biblioteca externa. */
 (function () {
-  // Número comercial do WhatsApp, só dígitos com DDI e DDD (ex.: "5534999999999").
+  // Números comerciais do WhatsApp, só dígitos com DDI e DDD (ex.: "5534999999999").
+  // Cada visita sorteia um, e todos os botões da página vão para ele: os contatos se dividem meio a meio.
+  // Os dois aparecem por extenso na chamada final ("Só quer conversar?").
   // Vazio: os botões "Falar com especialista" abrem o Direct do Instagram.
-  var WHATSAPP = '5516991366741';
+  var WHATSAPPS = ['5516993947715', '5516993129924'];
+  var WHATSAPP = WHATSAPPS[Math.floor(Math.random() * WHATSAPPS.length)] || '';
+  document.documentElement.setAttribute('data-whatsapp', WHATSAPP);
   var MENSAGEM = 'Olá! Vim pelo site da Gogh e quero falar com um especialista sobre a minha loja.';
 
   if (/^\d{12,13}$/.test(WHATSAPP)) {

@@ -126,7 +126,8 @@
 
 /* ---------- contato: os dois caminhos caem no WhatsApp ---------- */
 (function contato(){
-  var WHATSAPP = '5516991366741';
+  // o mesmo número que o site.js sorteou para os botões desta visita
+  var WHATSAPP = document.documentElement.getAttribute('data-whatsapp') || '5516993947715';
 
   // texto da pessoa: uma linha so, sem espaco sobrando, com limite
   function limpa(s, max){
